@@ -1,4 +1,15 @@
 // merkle_tree/merkle_tree.h
+// merkle_tree/merkle_tree.cpp
+/**
+ * @file merkle_tree.h
+ * @author Alp Dikmen
+ * @brief A simple merkle tree implementation using UED's dll
+ * @version 0.1
+ * @date 2025-12-20
+ *
+ * @copyright Copyright (c) 2025
+ *
+ */
 #ifndef MERKLE_TREE_H
 #define MERKLE_TREE_H
 

@@ -2,8 +2,17 @@
 // Created by alpdi on 20/12/2025.
 //
 
-
-// main.cpp
+// merkle_tree/merkle_tree.cpp
+/**
+ * @file merkle_tree.cpp
+ * @author Alp Dikmen
+ * @brief A simple test case for my merkle tree implementation
+ * @version 0.1
+ * @date 2025-12-20
+ *
+ * @copyright Copyright (c) 2025
+ *
+ */
 #include <iostream>
 #include <fstream>
 #include <filesystem>
