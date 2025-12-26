@@ -1,27 +1,29 @@
 /**
  * @file main.cpp
  * @author Umut Ertuğrul Daşgın
+ * @co-conturbuted Alp Dikmen
  * @brief Entry point for the VCS Project. Contains Demo and Interactive modes.
  * @version 1.0
  * @date 2025-12-25
  */
 
+// main.cpp (edit: remove run_demo() definition, keep call)
 #include <iostream>
 #include <string>
 #include <sstream>
 #include <vector>
 
-// Core Repository (Facade)
-#include "include/core/Repository.h"
+// Keep this as-is for now to minimize changes; you may later switch to <core/Repository.h>
+#include <core/Repository.h>
 
-// Ekran temizleme makrosu (Cross-platform)
+#include <tests/demo_scenarios.h>
+
 #ifdef _WIN32
     #define CLEAR_SCREEN "cls"
 #else
     #define CLEAR_SCREEN "clear"
 #endif
 
-// Renkli çıktılar için (Opsiyonel, desteklenmiyorsa normal text görünür)
 #define RESET   "\033[0m"
 #define RED     "\033[31m"
 #define GREEN   "\033[32m"
@@ -29,9 +31,6 @@
 #define BLUE    "\033[34m"
 #define CYAN    "\033[36m"
 
-/**
- * @brief Kullanıcı girdisini boşluklara göre böler.
- */
 std::vector<std::string> split_input(const std::string& input) {
     std::vector<std::string> tokens;
     std::stringstream ss(input);
@@ -42,53 +41,6 @@ std::vector<std::string> split_input(const std::string& input) {
     return tokens;
 }
 
-/**
- * @brief Otomatik Test Senaryosu
- * Branch açma, dosya değiştirme, merge ve conflict durumlarını gösterir.
- */
-void run_demo() {
-    std::cout << GREEN << "=== AUTOMATED DEMO SCENARIO STARTED ===" << RESET << std::endl;
-    
-    try {
-        core::Repository repo; // Otomatik olarak "master" branch oluşturur.
-
-        std::cout << CYAN << "\n[STEP 1] Initial Commit on Master" << RESET << std::endl;
-        repo.add("main.cpp", "int main() { return 0; }");
-        repo.add("readme.txt", "This is a VCS project.");
-        repo.commit("Initial commit", "Umut");
-
-        std::cout << CYAN << "\n[STEP 2] Create and Switch to 'feature-login'" << RESET << std::endl;
-        repo.create_branch("feature-login");
-        repo.checkout("feature-login");
-
-        std::cout << CYAN << "\n[STEP 3] Work on Feature Branch" << RESET << std::endl;
-        repo.add("login.cpp", "void login() { /* logic */ }");
-        repo.add("main.cpp", "int main() { login(); return 0; }"); // main.cpp değişti
-        repo.commit("Added login feature", "Alp");
-
-        std::cout << CYAN << "\n[STEP 4] Switch back to Master and Create Conflict" << RESET << std::endl;
-        repo.checkout("master");
-        // Master'da da main.cpp dosyasını farklı şekilde değiştiriyoruz
-        repo.add("main.cpp", "int main() { std::cout << 'Hello'; return 0; }");
-        repo.commit("Changed main on master", "Umut");
-
-        std::cout << CYAN << "\n[STEP 5] Merge 'feature-login' into 'master' (Expect Conflict)" << RESET << std::endl;
-        // Burada main.cpp hem master'da hem feature'da değiştiği için conflict çıkmalı.
-        repo.merge("feature-login");
-
-        std::cout << CYAN << "\n[STEP 6] Show History" << RESET << std::endl;
-        repo.log();
-
-    } catch (const std::exception& e) {
-        std::cerr << RED << "Demo Error: " << e.what() << RESET << std::endl;
-    }
-
-    std::cout << GREEN << "\n=== DEMO FINISHED ===" << RESET << std::endl;
-}
-
-/**
- * @brief İnteraktif Komut Satırı (REPL)
- */
 void interactive_shell() {
     core::Repository repo;
     std::string line;
@@ -131,9 +83,7 @@ void interactive_shell() {
                     std::getline(std::cin, content);
                     repo.add(args[1], content);
                 } else {
-                    // Basit parser: 3. argümandan sonrasını içerik kabul et (tek kelime ise)
-                    // Çok kelimeli içerik için yukarıdaki interactive input daha güvenli
-                    repo.add(args[1], args[2]); 
+                    repo.add(args[1], args[2]);
                 }
             }
             else if (command == "commit") {
@@ -173,12 +123,10 @@ void interactive_shell() {
 }
 
 int main(int argc, char* argv[]) {
-    // Eğer program "demo" argümanı ile başlatılırsa direkt demoyu çalıştır
     if (argc > 1 && std::string(argv[1]) == "demo") {
         run_demo();
     } else {
         interactive_shell();
     }
-
     return 0;
 }
