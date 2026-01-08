@@ -1,0 +1,123 @@
+\doxysection{data\+\_\+structures\+::Doubly\+Linked\+List\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+::iterator Class Reference}
+\hypertarget{classdata__structures_1_1_doubly_linked_list_1_1iterator}{}\label{classdata__structures_1_1_doubly_linked_list_1_1iterator}\index{data\_structures::DoublyLinkedList$<$ T $>$::iterator@{data\_structures::DoublyLinkedList$<$ T $>$::iterator}}
+
+
+Minimal forward iterator for the list.  
+
+
+
+
+{\ttfamily \#include $<$sample.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdata__structures_1_1_doubly_linked_list_1_1iterator_a40d6d5431efd89064e09bc6295de85fb}{iterator}} (Node \texorpdfstring{$\ast$}{*}p=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructs an iterator from a node pointer. \end{DoxyCompactList}\item 
+T \& \mbox{\hyperlink{classdata__structures_1_1_doubly_linked_list_1_1iterator_a2086dad88e26e54727063ce9d7c6d314}{operator\texorpdfstring{$\ast$}{*}}} () const
+\begin{DoxyCompactList}\small\item\em Dereferences the iterator. \end{DoxyCompactList}\item 
+T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classdata__structures_1_1_doubly_linked_list_1_1iterator_adc726674ae44a7a4bff4a08e7574c90f}{operator-\/$>$}} () const
+\begin{DoxyCompactList}\small\item\em Member access operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdata__structures_1_1_doubly_linked_list_1_1iterator_a40d6d5431efd89064e09bc6295de85fb}{iterator}} \& \mbox{\hyperlink{classdata__structures_1_1_doubly_linked_list_1_1iterator_a2b7788bd9a3726d0e2308213c7b7e9de}{operator++}} ()
+\begin{DoxyCompactList}\small\item\em Advances iterator to the next node. \end{DoxyCompactList}\item 
+\Hypertarget{classdata__structures_1_1_doubly_linked_list_1_1iterator_a14d234c1e501cb1f244daa9bdcf806b1}\label{classdata__structures_1_1_doubly_linked_list_1_1iterator_a14d234c1e501cb1f244daa9bdcf806b1} 
+bool {\bfseries operator==} (const \mbox{\hyperlink{classdata__structures_1_1_doubly_linked_list_1_1iterator_a40d6d5431efd89064e09bc6295de85fb}{iterator}} \&other) const
+\begin{DoxyCompactList}\small\item\em Equality comparison. \end{DoxyCompactList}\item 
+\Hypertarget{classdata__structures_1_1_doubly_linked_list_1_1iterator_aae3c47faff06071bfd18337ea0ec3668}\label{classdata__structures_1_1_doubly_linked_list_1_1iterator_aae3c47faff06071bfd18337ea0ec3668} 
+bool {\bfseries operator!=} (const \mbox{\hyperlink{classdata__structures_1_1_doubly_linked_list_1_1iterator_a40d6d5431efd89064e09bc6295de85fb}{iterator}} \&other) const
+\begin{DoxyCompactList}\small\item\em Inequality comparison. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classdata__structures_1_1_doubly_linked_list_1_1iterator_a8518425fc192346c00bedb825184bcf1}\label{classdata__structures_1_1_doubly_linked_list_1_1iterator_a8518425fc192346c00bedb825184bcf1} 
+class {\bfseries Doubly\+Linked\+List}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class data\+\_\+structures\+::\+Doubly\+Linked\+List$<$ T $>$\+::iterator}
+Minimal forward iterator for the list. 
+
+Iterates from head to tail. 
+
+\label{doc-constructors}
+\Hypertarget{classdata__structures_1_1_doubly_linked_list_1_1iterator_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classdata__structures_1_1_doubly_linked_list_1_1iterator_a40d6d5431efd89064e09bc6295de85fb}\index{data\_structures::DoublyLinkedList$<$ T $>$::iterator@{data\_structures::DoublyLinkedList$<$ T $>$::iterator}!iterator@{iterator}}
+\index{iterator@{iterator}!data\_structures::DoublyLinkedList$<$ T $>$::iterator@{data\_structures::DoublyLinkedList$<$ T $>$::iterator}}
+\doxysubsubsection{\texorpdfstring{iterator()}{iterator()}}
+{\footnotesize\ttfamily \label{classdata__structures_1_1_doubly_linked_list_1_1iterator_a40d6d5431efd89064e09bc6295de85fb} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{classdata__structures_1_1_doubly_linked_list}{data\+\_\+structures\+::\+Doubly\+Linked\+List}}$<$ T $>$\+::iterator\+::iterator (\begin{DoxyParamCaption}\item[{Node \texorpdfstring{$\ast$}{*}}]{p}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Constructs an iterator from a node pointer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Node pointer (nullptr means \doxylink{classdata__structures_1_1_doubly_linked_list_a8c1fdd72faf0ae647ae7c2fe51252524}{end()}). \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classdata__structures_1_1_doubly_linked_list_1_1iterator_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classdata__structures_1_1_doubly_linked_list_1_1iterator_a2086dad88e26e54727063ce9d7c6d314}\index{data\_structures::DoublyLinkedList$<$ T $>$::iterator@{data\_structures::DoublyLinkedList$<$ T $>$::iterator}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!data\_structures::DoublyLinkedList$<$ T $>$::iterator@{data\_structures::DoublyLinkedList$<$ T $>$::iterator}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}}
+{\footnotesize\ttfamily \label{classdata__structures_1_1_doubly_linked_list_1_1iterator_a2086dad88e26e54727063ce9d7c6d314} 
+template$<$typename T$>$ \\
+T \& \mbox{\hyperlink{classdata__structures_1_1_doubly_linked_list}{data\+\_\+structures\+::\+Doubly\+Linked\+List}}$<$ T $>$\+::iterator\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Dereferences the iterator. 
+
+\begin{DoxyPrecond}{Precondition}
+p\+\_\+ != nullptr 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+Reference to the current element. 
+\end{DoxyReturn}
+\Hypertarget{classdata__structures_1_1_doubly_linked_list_1_1iterator_a2b7788bd9a3726d0e2308213c7b7e9de}\index{data\_structures::DoublyLinkedList$<$ T $>$::iterator@{data\_structures::DoublyLinkedList$<$ T $>$::iterator}!operator++@{operator++}}
+\index{operator++@{operator++}!data\_structures::DoublyLinkedList$<$ T $>$::iterator@{data\_structures::DoublyLinkedList$<$ T $>$::iterator}}
+\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}}
+{\footnotesize\ttfamily \label{classdata__structures_1_1_doubly_linked_list_1_1iterator_a2b7788bd9a3726d0e2308213c7b7e9de} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{classdata__structures_1_1_doubly_linked_list_1_1iterator_a40d6d5431efd89064e09bc6295de85fb}{iterator}} \& \mbox{\hyperlink{classdata__structures_1_1_doubly_linked_list}{data\+\_\+structures\+::\+Doubly\+Linked\+List}}$<$ T $>$\+::iterator\+::operator++ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Advances iterator to the next node. 
+
+\begin{DoxyPostcond}{Postcondition}
+Iterator points to the next node (or \doxylink{classdata__structures_1_1_doubly_linked_list_a8c1fdd72faf0ae647ae7c2fe51252524}{end()}). 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+Reference to this iterator. 
+\end{DoxyReturn}
+\Hypertarget{classdata__structures_1_1_doubly_linked_list_1_1iterator_adc726674ae44a7a4bff4a08e7574c90f}\index{data\_structures::DoublyLinkedList$<$ T $>$::iterator@{data\_structures::DoublyLinkedList$<$ T $>$::iterator}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!data\_structures::DoublyLinkedList$<$ T $>$::iterator@{data\_structures::DoublyLinkedList$<$ T $>$::iterator}}
+\doxysubsubsection{\texorpdfstring{operator-\/$>$()}{operator->()}}
+{\footnotesize\ttfamily \label{classdata__structures_1_1_doubly_linked_list_1_1iterator_adc726674ae44a7a4bff4a08e7574c90f} 
+template$<$typename T$>$ \\
+T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classdata__structures_1_1_doubly_linked_list}{data\+\_\+structures\+::\+Doubly\+Linked\+List}}$<$ T $>$\+::iterator\+::operator-\/$>$ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Member access operator. 
+
+\begin{DoxyPrecond}{Precondition}
+p\+\_\+ != nullptr 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+Pointer to the current element. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/eto/\+Desktop/tri/tri/include/data\+\_\+structures/sample.\+h\end{DoxyCompactItemize}
