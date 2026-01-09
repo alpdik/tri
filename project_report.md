@@ -34,7 +34,7 @@
 
 
 ## Key Deliverables
-- C\+\+ application buildable and runnable in CLion.
+- C\+\+ application buildable and runnable in a modern Linux envoriment.
 - A demo demonstrating all the features that the program provides.
 - Documentation describing usage, working directory behavior, and common issues.
 
