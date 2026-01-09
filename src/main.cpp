@@ -17,7 +17,7 @@
 #include <core/Repository.h>
 
 #include <tests/demo_scenarios.h>
-
+#include "file_viewer.hpp"
 #ifdef _WIN32
     #define CLEAR_SCREEN "cls"
 #else
@@ -67,6 +67,7 @@ void interactive_shell() {
                 std::cout << "Commands:\n"
                           << "  add <file> <content>   : Stage a file (use quotes for content logic not impl in parser)\n"
                           << "                           (Tip: For this shell, content is single word or handled simply)\n"
+                          << "  view <view>              : View contents of a file \n"
                           << "  commit <msg> <author>  : Commit changes\n"
                           << "  log                    : Show history\n"
                           << "  branch <name>          : Create new branch\n"
@@ -84,6 +85,14 @@ void interactive_shell() {
                     repo.add(args[1], content);
                 } else {
                     repo.add(args[1], args[2]);
+                }
+            }
+            else if (command == "view")
+            {
+                if (args.size() < 2) {
+                    std::cout << "Usage: view <path>\n";
+                } else {
+                    (void)print_file_contents(args[1]);
                 }
             }
             else if (command == "commit") {
