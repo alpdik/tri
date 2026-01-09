@@ -67,7 +67,7 @@ void interactive_shell() {
                 std::cout << "Commands:\n"
                           << "  add <file> <content>   : Stage a file (use quotes for content logic not impl in parser)\n"
                           << "                           (Tip: For this shell, content is single word or handled simply)\n"
-                          << "  view <view>              : View contents of a file"
+                          << "  view <view>              : View contents of a file \n"
                           << "  commit <msg> <author>  : Commit changes\n"
                           << "  log                    : Show history\n"
                           << "  branch <name>          : Create new branch\n"
