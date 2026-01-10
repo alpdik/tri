@@ -1,0 +1,114 @@
+\doxysection{data\+\_\+structures\+::Stack\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classdata__structures_1_1_stack}{}\label{classdata__structures_1_1_stack}\index{data\_structures::Stack$<$ T $>$@{data\_structures::Stack$<$ T $>$}}
+
+
+LIFO stack container.  
+
+
+
+
+{\ttfamily \#include $<$Stack.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classdata__structures_1_1_stack_ae5b80d105e95b0d73f7be027dfabbe56}{push}} (const T \&item)
+\begin{DoxyCompactList}\small\item\em Pushes an element onto the stack. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdata__structures_1_1_stack_a3192bba1ef24bf7a54d75cf1087ae49e}{pop}} ()
+\begin{DoxyCompactList}\small\item\em Removes the top element. \end{DoxyCompactList}\item 
+T \& \mbox{\hyperlink{classdata__structures_1_1_stack_afbbe79ea71c575e11feb9aa597ceded0}{top}} ()
+\begin{DoxyCompactList}\small\item\em Returns the top element. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classdata__structures_1_1_stack_a04e2e7cb58b2de6d3a15053bfaaf6080}{empty}} () const
+\begin{DoxyCompactList}\small\item\em Checks whether the stack is empty. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classdata__structures_1_1_stack_a66d0d692a9e03d14afbd227c41be4bc8}{size}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of elements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class data\+\_\+structures\+::\+Stack$<$ T $>$}
+LIFO stack container. 
+
+
+\begin{DoxyItemize}
+\item Uses a doubly linked list internally
+\item Provides constant-\/time push and pop 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{classdata__structures_1_1_stack_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classdata__structures_1_1_stack_a04e2e7cb58b2de6d3a15053bfaaf6080}\index{data\_structures::Stack$<$ T $>$@{data\_structures::Stack$<$ T $>$}!empty@{empty}}
+\index{empty@{empty}!data\_structures::Stack$<$ T $>$@{data\_structures::Stack$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily \label{classdata__structures_1_1_stack_a04e2e7cb58b2de6d3a15053bfaaf6080} 
+template$<$typename T$>$ \\
+bool \mbox{\hyperlink{classdata__structures_1_1_stack}{data\+\_\+structures\+::\+Stack}}$<$ T $>$\+::empty (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks whether the stack is empty. 
+
+\begin{DoxyReturn}{Returns}
+True if the stack is empty. 
+\end{DoxyReturn}
+\Hypertarget{classdata__structures_1_1_stack_a3192bba1ef24bf7a54d75cf1087ae49e}\index{data\_structures::Stack$<$ T $>$@{data\_structures::Stack$<$ T $>$}!pop@{pop}}
+\index{pop@{pop}!data\_structures::Stack$<$ T $>$@{data\_structures::Stack$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{pop()}{pop()}}
+{\footnotesize\ttfamily \label{classdata__structures_1_1_stack_a3192bba1ef24bf7a54d75cf1087ae49e} 
+template$<$typename T$>$ \\
+void \mbox{\hyperlink{classdata__structures_1_1_stack}{data\+\_\+structures\+::\+Stack}}$<$ T $>$\+::pop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Removes the top element. 
+
+\Hypertarget{classdata__structures_1_1_stack_ae5b80d105e95b0d73f7be027dfabbe56}\index{data\_structures::Stack$<$ T $>$@{data\_structures::Stack$<$ T $>$}!push@{push}}
+\index{push@{push}!data\_structures::Stack$<$ T $>$@{data\_structures::Stack$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}}
+{\footnotesize\ttfamily \label{classdata__structures_1_1_stack_ae5b80d105e95b0d73f7be027dfabbe56} 
+template$<$typename T$>$ \\
+void \mbox{\hyperlink{classdata__structures_1_1_stack}{data\+\_\+structures\+::\+Stack}}$<$ T $>$\+::push (\begin{DoxyParamCaption}\item[{const T \&}]{item}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Pushes an element onto the stack. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & Element to push. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classdata__structures_1_1_stack_a66d0d692a9e03d14afbd227c41be4bc8}\index{data\_structures::Stack$<$ T $>$@{data\_structures::Stack$<$ T $>$}!size@{size}}
+\index{size@{size}!data\_structures::Stack$<$ T $>$@{data\_structures::Stack$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily \label{classdata__structures_1_1_stack_a66d0d692a9e03d14afbd227c41be4bc8} 
+template$<$typename T$>$ \\
+size\+\_\+t \mbox{\hyperlink{classdata__structures_1_1_stack}{data\+\_\+structures\+::\+Stack}}$<$ T $>$\+::size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the number of elements. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classdata__structures_1_1_stack}{Stack} size. 
+\end{DoxyReturn}
+\Hypertarget{classdata__structures_1_1_stack_afbbe79ea71c575e11feb9aa597ceded0}\index{data\_structures::Stack$<$ T $>$@{data\_structures::Stack$<$ T $>$}!top@{top}}
+\index{top@{top}!data\_structures::Stack$<$ T $>$@{data\_structures::Stack$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{top()}{top()}}
+{\footnotesize\ttfamily \label{classdata__structures_1_1_stack_afbbe79ea71c575e11feb9aa597ceded0} 
+template$<$typename T$>$ \\
+T \& \mbox{\hyperlink{classdata__structures_1_1_stack}{data\+\_\+structures\+::\+Stack}}$<$ T $>$\+::top (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the top element. 
+
+\begin{DoxyReturn}{Returns}
+Reference to the top element. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/data\+\_\+structures/\mbox{\hyperlink{_stack_8h}{Stack.\+h}}\end{DoxyCompactItemize}

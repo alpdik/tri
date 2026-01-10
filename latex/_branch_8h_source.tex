@@ -1,0 +1,32 @@
+\doxysection{Branch.\+h}
+\hypertarget{_branch_8h_source}{}\label{_branch_8h_source}\index{include/entities/Branch.h@{include/entities/Branch.h}}
+\mbox{\hyperlink{_branch_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_commit_8h}{Commit.h}}"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceentities}{entities}}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classentities_1_1_branch_a6b971db159ce7667b3822c02d2eab874}{Branch}}\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ std::string\ name\_;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classentities_1_1_commit}{Commit}}*\ last\_commit\_;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classentities_1_1_branch_a6b971db159ce7667b3822c02d2eab874}{Branch}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \mbox{\hyperlink{classentities_1_1_commit}{Commit}}*\ last\_commit)\ :\ name\_(name),\ last\_commit\_(last\_commit)\ \{\}}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classentities_1_1_branch_a01224cc80ff638ef532553b610503544}{Branch}}()\ :\ name\_(\textcolor{stringliteral}{"{}"{}}),\ last\_commit\_(nullptr)\ \{\}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classentities_1_1_branch_ab0ca250fbbea166eb2b5afec79784f48}{get\_name}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ name\_;\ \}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classentities_1_1_commit}{Commit}}*\ \mbox{\hyperlink{classentities_1_1_branch_a610ac0c03d5dccb13f07776ea9864678}{get\_last\_commit}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ last\_commit\_;\ \}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classentities_1_1_branch_aec4b8e580db2f1f45ceab52fd519c7bf}{set\_last\_commit}}(\mbox{\hyperlink{classentities_1_1_commit}{Commit}}*\ new\_last\_commit)\ \{\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ last\_commit\_\ =\ new\_last\_commit;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \};}
+\DoxyCodeLine{00035\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,87 @@
+\doxysection{Commit.\+h}
+\hypertarget{_commit_8h_source}{}\label{_commit_8h_source}\index{include/entities/Commit.h@{include/entities/Commit.h}}
+\mbox{\hyperlink{_commit_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <ctime>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_doubly_linked_list_8h}{../data\_structures/DoublyLinkedList.h}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_file_8h}{../entities/File.h}}"{}}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceentities}{entities}}\ \{}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classentities_1_1_commit_ae2c0c5ce9ed337db82a8738f6d521973}{Commit}}\ \{}
+\DoxyCodeLine{00031\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00032\ \ \ \ \ std::string\ id\_;}
+\DoxyCodeLine{00033\ \ \ \ \ std::string\ message\_;}
+\DoxyCodeLine{00034\ \ \ \ \ std::string\ author\_;}
+\DoxyCodeLine{00035\ \ \ \ \ std::time\_t\ time\_;}
+\DoxyCodeLine{00036\ \ \ \ \ std::string\ tree\_hash\_;}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{classdata__structures_1_1_doubly_linked_list}{data\_structures::DoublyLinkedList<File>}}\ files\_;}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{classentities_1_1_commit_ae2c0c5ce9ed337db82a8738f6d521973}{Commit}}*\ parent1\_;}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{classentities_1_1_commit_ae2c0c5ce9ed337db82a8738f6d521973}{Commit}}*\ parent2\_;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00045\ \ \ \ \ std::string\ calculate\_id()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ ss\ <<\ message\_\ <<\ author\_\ <<\ time\_\ <<\ tree\_hash\_;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (parent1\_)\ ss\ <<\ parent1\_-\/>get\_id();}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (parent2\_)\ ss\ <<\ parent2\_-\/>get\_id();}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ std::hash<std::string>\ hasher;}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ std::size\_t\ hash\_val\ =\ hasher(ss.str());}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ std::stringstream\ out;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ out\ <<\ std::hex\ <<\ std::setw(16)\ <<\ std::setfill(\textcolor{charliteral}{'0'})\ <<\ hash\_val;}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ out.str();}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{classentities_1_1_commit_ae2c0c5ce9ed337db82a8738f6d521973}{Commit}}(\textcolor{keyword}{const}\ std::string\&\ message,}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ author,}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ tree\_hash,}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdata__structures_1_1_doubly_linked_list}{data\_structures::DoublyLinkedList<File>}}\&\ files,}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classentities_1_1_commit_ae2c0c5ce9ed337db82a8738f6d521973}{Commit}}*\ p1\ =\ \textcolor{keyword}{nullptr},}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classentities_1_1_commit_ae2c0c5ce9ed337db82a8738f6d521973}{Commit}}*\ p2\ =\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ :\ message\_(message),}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ author\_(author),}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ tree\_hash\_(tree\_hash),}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ files\_(files),}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ parent1\_(p1),}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ parent2\_(p2)\ \{}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ time\_\ =\ std::time(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ id\_\ =\ calculate\_id();}
+\DoxyCodeLine{00087\ \ \ \ \ \}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classentities_1_1_commit_a9010e46341002c13259e1110f3c088f4}{get\_id}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ id\_;\ \}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classentities_1_1_commit_aadec2c35e1f4d9727746f8546b3a5f1c}{get\_message}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ message\_;\ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classentities_1_1_commit_ae9df9b356b2a981a978cf2132c752e34}{get\_author}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ author\_;\ \}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{const}\ std::time\_t\&\ \mbox{\hyperlink{classentities_1_1_commit_ae2f5922d8a7dabaae5ac68a34b196e0c}{get\_time}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ time\_;\ \}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classentities_1_1_commit_a84ae19004a09b3dfdb31f98569769833}{get\_tree\_hash}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ tree\_hash\_;\ \}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classdata__structures_1_1_doubly_linked_list}{data\_structures::DoublyLinkedList<File>}}\&\ \mbox{\hyperlink{classentities_1_1_commit_aa9cab2f0605657ad8d3ddd3abb67a909}{get\_files}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ files\_;\ \}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00122\ \ \ \ \ \mbox{\hyperlink{classentities_1_1_commit_ae2c0c5ce9ed337db82a8738f6d521973}{Commit}}*\ \mbox{\hyperlink{classentities_1_1_commit_adf8d8d39c62925f1b6c53bf8a64e3408}{get\_parent1}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ parent1\_;\ \}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00127\ \ \ \ \ \mbox{\hyperlink{classentities_1_1_commit_ae2c0c5ce9ed337db82a8738f6d521973}{Commit}}*\ \mbox{\hyperlink{classentities_1_1_commit_a3ca3732810681720fd6dff05b54d1764}{get\_parent2}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ parent2\_;\ \}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classentities_1_1_commit_ad6a2e0ab3d4b3070ba0bd7069798a2f8}{is\_merge\_commit}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ parent1\_\ \&\&\ parent2\_;\ \}}
+\DoxyCodeLine{00134\ \};}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \}\ \textcolor{comment}{//\ namespace\ entities}}
+
+\end{DoxyCode}

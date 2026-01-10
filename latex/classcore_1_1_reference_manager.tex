@@ -1,0 +1,88 @@
+\doxysection{core\+::Reference\+Manager Class Reference}
+\hypertarget{classcore_1_1_reference_manager}{}\label{classcore_1_1_reference_manager}\index{core::ReferenceManager@{core::ReferenceManager}}
+
+
+{\ttfamily \#include $<$Reference\+Manager.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcore_1_1_reference_manager_a914818d3c858bc95afabc555fea79b61}{Reference\+Manager}} ()
+\item 
+\mbox{\hyperlink{classcore_1_1_reference_manager_ae726dc3640219dde0e1c3d4a416b37db}{\texorpdfstring{$\sim$}{\string~}\+Reference\+Manager}} ()
+\item 
+void \mbox{\hyperlink{classcore_1_1_reference_manager_a93e001fea18f34809ab8a485676fbd5b}{create\+\_\+branch}} (const std\+::string \&name, \mbox{\hyperlink{classentities_1_1_commit}{entities\+::\+Commit}} \texorpdfstring{$\ast$}{*}target\+\_\+commit)
+\item 
+void \mbox{\hyperlink{classcore_1_1_reference_manager_a1a69f3a42969db14942aa1960b7ef3c0}{checkout\+\_\+branch}} (const std\+::string name)
+\item 
+void \mbox{\hyperlink{classcore_1_1_reference_manager_a9e60b76f0e7bc623e96cbe0a347f3017}{update\+\_\+head}} (\mbox{\hyperlink{classentities_1_1_commit}{entities\+::\+Commit}} \texorpdfstring{$\ast$}{*}new\+\_\+commit)
+\item 
+\mbox{\hyperlink{classentities_1_1_branch}{entities\+::\+Branch}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classcore_1_1_reference_manager_a1adcfac73dddcae90c8322545d324f1c}{get\+\_\+current\+\_\+branch}} () const
+\item 
+\mbox{\hyperlink{classentities_1_1_branch}{entities\+::\+Branch}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classcore_1_1_reference_manager_a8bc633d5e4e1027c1c270e8c1a2852bc}{get\+\_\+branch}} (const std\+::string \&name)
+\item 
+const \mbox{\hyperlink{classdata__structures_1_1_doubly_linked_list}{data\+\_\+structures\+::\+Doubly\+Linked\+List}}$<$ \mbox{\hyperlink{classentities_1_1_branch}{entities\+::\+Branch}} \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{classcore_1_1_reference_manager_a01c4249c4763d078a54a15db7ff4a20d}{get\+\_\+all\+\_\+branches}} () const
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classcore_1_1_reference_manager_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcore_1_1_reference_manager_a914818d3c858bc95afabc555fea79b61}\index{core::ReferenceManager@{core::ReferenceManager}!ReferenceManager@{ReferenceManager}}
+\index{ReferenceManager@{ReferenceManager}!core::ReferenceManager@{core::ReferenceManager}}
+\doxysubsubsection{\texorpdfstring{ReferenceManager()}{ReferenceManager()}}
+{\footnotesize\ttfamily \label{classcore_1_1_reference_manager_a914818d3c858bc95afabc555fea79b61} 
+core\+::\+Reference\+Manager\+::\+Reference\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classcore_1_1_reference_manager_ae726dc3640219dde0e1c3d4a416b37db}\index{core::ReferenceManager@{core::ReferenceManager}!````~ReferenceManager@{\texorpdfstring{$\sim$}{\string~}ReferenceManager}}
+\index{````~ReferenceManager@{\texorpdfstring{$\sim$}{\string~}ReferenceManager}!core::ReferenceManager@{core::ReferenceManager}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ReferenceManager()}{\string~ReferenceManager()}}
+{\footnotesize\ttfamily \label{classcore_1_1_reference_manager_ae726dc3640219dde0e1c3d4a416b37db} 
+core\+::\+Reference\+Manager\+::\texorpdfstring{$\sim$}{\string~}\+Reference\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classcore_1_1_reference_manager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcore_1_1_reference_manager_a1a69f3a42969db14942aa1960b7ef3c0}\index{core::ReferenceManager@{core::ReferenceManager}!checkout\_branch@{checkout\_branch}}
+\index{checkout\_branch@{checkout\_branch}!core::ReferenceManager@{core::ReferenceManager}}
+\doxysubsubsection{\texorpdfstring{checkout\_branch()}{checkout\_branch()}}
+{\footnotesize\ttfamily \label{classcore_1_1_reference_manager_a1a69f3a42969db14942aa1960b7ef3c0} 
+void core\+::\+Reference\+Manager\+::checkout\+\_\+branch (\begin{DoxyParamCaption}\item[{const std\+::string}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classcore_1_1_reference_manager_a93e001fea18f34809ab8a485676fbd5b}\index{core::ReferenceManager@{core::ReferenceManager}!create\_branch@{create\_branch}}
+\index{create\_branch@{create\_branch}!core::ReferenceManager@{core::ReferenceManager}}
+\doxysubsubsection{\texorpdfstring{create\_branch()}{create\_branch()}}
+{\footnotesize\ttfamily \label{classcore_1_1_reference_manager_a93e001fea18f34809ab8a485676fbd5b} 
+void core\+::\+Reference\+Manager\+::create\+\_\+branch (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{\mbox{\hyperlink{classentities_1_1_commit}{entities\+::\+Commit}} \texorpdfstring{$\ast$}{*}}]{target\+\_\+commit}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classcore_1_1_reference_manager_a01c4249c4763d078a54a15db7ff4a20d}\index{core::ReferenceManager@{core::ReferenceManager}!get\_all\_branches@{get\_all\_branches}}
+\index{get\_all\_branches@{get\_all\_branches}!core::ReferenceManager@{core::ReferenceManager}}
+\doxysubsubsection{\texorpdfstring{get\_all\_branches()}{get\_all\_branches()}}
+{\footnotesize\ttfamily \label{classcore_1_1_reference_manager_a01c4249c4763d078a54a15db7ff4a20d} 
+const \mbox{\hyperlink{classdata__structures_1_1_doubly_linked_list}{data\+\_\+structures\+::\+Doubly\+Linked\+List}}$<$ \mbox{\hyperlink{classentities_1_1_branch}{entities\+::\+Branch}} \texorpdfstring{$\ast$}{*} $>$ \& core\+::\+Reference\+Manager\+::get\+\_\+all\+\_\+branches (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classcore_1_1_reference_manager_a8bc633d5e4e1027c1c270e8c1a2852bc}\index{core::ReferenceManager@{core::ReferenceManager}!get\_branch@{get\_branch}}
+\index{get\_branch@{get\_branch}!core::ReferenceManager@{core::ReferenceManager}}
+\doxysubsubsection{\texorpdfstring{get\_branch()}{get\_branch()}}
+{\footnotesize\ttfamily \label{classcore_1_1_reference_manager_a8bc633d5e4e1027c1c270e8c1a2852bc} 
+\mbox{\hyperlink{classentities_1_1_branch}{entities\+::\+Branch}} \texorpdfstring{$\ast$}{*} core\+::\+Reference\+Manager\+::get\+\_\+branch (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classcore_1_1_reference_manager_a1adcfac73dddcae90c8322545d324f1c}\index{core::ReferenceManager@{core::ReferenceManager}!get\_current\_branch@{get\_current\_branch}}
+\index{get\_current\_branch@{get\_current\_branch}!core::ReferenceManager@{core::ReferenceManager}}
+\doxysubsubsection{\texorpdfstring{get\_current\_branch()}{get\_current\_branch()}}
+{\footnotesize\ttfamily \label{classcore_1_1_reference_manager_a1adcfac73dddcae90c8322545d324f1c} 
+\mbox{\hyperlink{classentities_1_1_branch}{entities\+::\+Branch}} \texorpdfstring{$\ast$}{*} core\+::\+Reference\+Manager\+::get\+\_\+current\+\_\+branch (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classcore_1_1_reference_manager_a9e60b76f0e7bc623e96cbe0a347f3017}\index{core::ReferenceManager@{core::ReferenceManager}!update\_head@{update\_head}}
+\index{update\_head@{update\_head}!core::ReferenceManager@{core::ReferenceManager}}
+\doxysubsubsection{\texorpdfstring{update\_head()}{update\_head()}}
+{\footnotesize\ttfamily \label{classcore_1_1_reference_manager_a9e60b76f0e7bc623e96cbe0a347f3017} 
+void core\+::\+Reference\+Manager\+::update\+\_\+head (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classentities_1_1_commit}{entities\+::\+Commit}} \texorpdfstring{$\ast$}{*}}]{new\+\_\+commit}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/core/\mbox{\hyperlink{_reference_manager_8h}{Reference\+Manager.\+h}}\end{DoxyCompactItemize}
