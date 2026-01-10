@@ -17,6 +17,7 @@
 - Written a demo to test the capabilities of the program.
 
 ### `Umut Ertugrul Dasgin` 
+- Created UML Diagram
 - Wrote the data structures used in this project from scratch.
 - Wrote a hashing algorithm from scratch.
 - Wrote a staging are and a storage engine to store the files created.
