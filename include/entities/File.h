@@ -1,13 +1,14 @@
 /**
  * @file File.h
+ * @brief Represents a tracked file in the version control system.
+ *
  * @author Umut Ertuğrul Daşgın
- * @brief File.h
- * @version 1.0
+ * @note Documentation maintained by Deniz Kayra Aydın / Ömer Kağan Zafer.
+ * @version 1.1
  * @date 2025-12-25
- * 
- * @copyright Copyright (c) 2025
- * 
+ * @lastModified 2026-01-10
  */
+
 
 #pragma once
 
@@ -17,39 +18,83 @@
 #include <iomanip>
 
 namespace entities {
-    class File {
-    private:
-        std::string path_;
-        std::string content_;
-        std::string hash_;
 
-        std::string calculate_hash() const {
-            std::hash<std::string> hasher;
-            std::size_t hash_val = hasher(content_ + path_);
+/**
+ * @brief File snapshot with content-based hashing.
+ * * Stores file path and content
+ * * Computes a deterministic content hash
+ */
+class File {
+private:
+    std::string path_;
+    std::string content_;
+    std::string hash_;
 
-            std::stringstream ss;
-            ss << std::hex << std::setw(16) << std::setfill('0') << hash_val;
-            return ss.str();
-        }
+    /**
+     * @brief Computes the file hash.
+     * @return Deterministic hash value.
+     */
+    std::string calculate_hash() const {
+        std::hash<std::string> hasher;
+        std::size_t hash_val = hasher(content_ + path_);
 
-    public:
-        File(const std::string& path, const std::string& content) : path_(path), content_(content) {
-            hash_ = calculate_hash();
-        }
+        std::stringstream ss;
+        ss << std::hex << std::setw(16) << std::setfill('0') << hash_val;
+        return ss.str();
+    }
 
-        File() : path_(""), content_(""), hash_("") {}
+public:
+    /**
+     * @brief Creates a file with path and content.
+     * @param path File path.
+     * @param content File content.
+     */
+    File(const std::string& path, const std::string& content)
+        : path_(path), content_(content) {
+        hash_ = calculate_hash();
+    }
 
-        const std::string& get_path() const { return path_; }
-        const std::string& get_content() const { return content_; }
-        const std::string& get_hash() const { return hash_; }
+    /**
+     * @brief Creates an empty file object.
+     */
+    File() : path_(""), content_(""), hash_("") {}
 
-        void set_content(const std::string& new_content) {
-            content_ = new_content;
-            hash_ = calculate_hash();
-        }
+    /**
+     * @brief Returns the file path.
+     */
+    const std::string& get_path() const { return path_; }
 
-        void set_hash_manual(const std::string& hash) { hash_ = hash; }
+    /**
+     * @brief Returns the file content.
+     */
+    const std::string& get_content() const { return content_; }
 
-        bool operator==(const File& other) const { return hash_ == other.hash_; }
-    };
-}
+    /**
+     * @brief Returns the file hash.
+     */
+    const std::string& get_hash() const { return hash_; }
+
+    /**
+     * @brief Updates file content and recomputes hash.
+     * @param new_content New file content.
+     */
+    void set_content(const std::string& new_content) {
+        content_ = new_content;
+        hash_ = calculate_hash();
+    }
+
+    /**
+     * @brief Sets the hash value manually.
+     * @param hash Hash value to assign.
+     */
+    void set_hash_manual(const std::string& hash) { hash_ = hash; }
+
+    /**
+     * @brief Compares files by hash value.
+     * @param other File to compare.
+     * @return True if hashes match.
+     */
+    bool operator==(const File& other) const { return hash_ == other.hash_; }
+};
+
+} // namespace entities

@@ -1,0 +1,124 @@
+\doxysection{Merkle\+Tree.\+h}
+\hypertarget{_merkle_tree_8h_source}{}\label{_merkle_tree_8h_source}\index{include/core/MerkleTree.h@{include/core/MerkleTree.h}}
+\mbox{\hyperlink{_merkle_tree_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_doubly_linked_list_8h}{../data\_structures/DoublyLinkedList.h}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_file_8h}{../entities/File.h}}"{}}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacecore}{core}}\ \{}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespacecore_aa43c53b58fc3d424727e7b163f94d0f4}{NodeType}}\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{namespacecore_aa43c53b58fc3d424727e7b163f94d0f4abe709e3e811a0cacb74799cbc21fed9f}{BLOB}},}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{namespacecore_aa43c53b58fc3d424727e7b163f94d0f4a06aa83f9e6cec6ca15fae2c0e1112c3f}{TREE}}}
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structcore_1_1_merkle_node_abc15dde196724dccd68f423978812b13}{MerkleNode}}\ \{}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ std::string\ \mbox{\hyperlink{structcore_1_1_merkle_node_afb6b4d39b8bf5b3fe11fa6e86641b5de}{name}};}
+\DoxyCodeLine{00042\ \ \ \ \ std::string\ \mbox{\hyperlink{structcore_1_1_merkle_node_ac3351fe340711a8904f77dfac0fe9e55}{hash}};}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{namespacecore_aa43c53b58fc3d424727e7b163f94d0f4}{NodeType}}\ \mbox{\hyperlink{structcore_1_1_merkle_node_a6d345233c571eebd8613afb206477b05}{type}};}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{classdata__structures_1_1_doubly_linked_list}{data\_structures::DoublyLinkedList<MerkleNode*>}}\ \mbox{\hyperlink{structcore_1_1_merkle_node_ae220035200beefe71c700caed9d4433b}{children}};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{structcore_1_1_merkle_node_abc15dde196724dccd68f423978812b13}{MerkleNode}}(std::string\ n,\ \mbox{\hyperlink{namespacecore_aa43c53b58fc3d424727e7b163f94d0f4}{NodeType}}\ t)\ :\ \mbox{\hyperlink{structcore_1_1_merkle_node_afb6b4d39b8bf5b3fe11fa6e86641b5de}{name}}(n),\ \mbox{\hyperlink{structcore_1_1_merkle_node_a6d345233c571eebd8613afb206477b05}{type}}(t)\ \{\}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{structcore_1_1_merkle_node_a14cb46da87cecada099685970d6f517d}{\string~MerkleNode}}()\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{structcore_1_1_merkle_node_ae220035200beefe71c700caed9d4433b}{children}}.begin();\ it\ !=\ \mbox{\hyperlink{structcore_1_1_merkle_node_ae220035200beefe71c700caed9d4433b}{children}}.end();\ ++it)\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ *it;}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+\DoxyCodeLine{00061\ \};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcore_1_1_merkle_tree_a0a74c65aa254de189a75a609ac99fad9}{MerkleTree}}\ \{}
+\DoxyCodeLine{00069\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{structcore_1_1_merkle_node}{MerkleNode}}*\ \mbox{\hyperlink{classcore_1_1_merkle_tree_a693029668ed3805f13129372e8ee86d7}{root}};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classcore_1_1_merkle_tree_a0a74c65aa254de189a75a609ac99fad9}{MerkleTree}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classdata__structures_1_1_doubly_linked_list}{data\_structures::DoublyLinkedList<entities::File>}}\&\ staged\_files)\ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcore_1_1_merkle_tree_a693029668ed3805f13129372e8ee86d7}{root}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structcore_1_1_merkle_node}{MerkleNode}}(\textcolor{stringliteral}{"{}root"{}},\ \mbox{\hyperlink{namespacecore_aa43c53b58fc3d424727e7b163f94d0f4a06aa83f9e6cec6ca15fae2c0e1112c3f}{TREE}});}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ build\_from\_staging(staged\_files);}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ calculate\_hashes\_recursive(\mbox{\hyperlink{classcore_1_1_merkle_tree_a693029668ed3805f13129372e8ee86d7}{root}});}
+\DoxyCodeLine{00080\ \ \ \ \ \}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{classcore_1_1_merkle_tree_a5d7d186fffc178cbf369fb6c0a7adc7c}{\string~MerkleTree}}()\ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ \mbox{\hyperlink{classcore_1_1_merkle_tree_a693029668ed3805f13129372e8ee86d7}{root}};}
+\DoxyCodeLine{00087\ \ \ \ \ \}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00093\ \ \ \ \ std::string\ \mbox{\hyperlink{classcore_1_1_merkle_tree_a1b63cdc5fa431631e1d98b5f7f8de6ac}{get\_root\_hash}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcore_1_1_merkle_tree_a693029668ed3805f13129372e8ee86d7}{root}}\ ?\ \mbox{\hyperlink{classcore_1_1_merkle_tree_a693029668ed3805f13129372e8ee86d7}{root}}-\/>hash\ :\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00095\ \ \ \ \ \}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00103\ \ \ \ \ std::string\ calculate\_hash(\textcolor{keyword}{const}\ std::string\&\ input)\ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ std::hash<std::string>\ hasher;}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ std::size\_t\ hash\_val\ =\ hasher(input);}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ ss\ <<\ std::hex\ <<\ std::setw(16)\ <<\ std::setfill(\textcolor{charliteral}{'0'})\ <<\ hash\_val;}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ss.str();}
+\DoxyCodeLine{00109\ \ \ \ \ \}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{void}\ build\_from\_staging(\textcolor{keyword}{const}\ \mbox{\hyperlink{classdata__structures_1_1_doubly_linked_list}{data\_structures::DoublyLinkedList<entities::File>}}\&\ files)\ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ files.\mbox{\hyperlink{classdata__structures_1_1_doubly_linked_list_aef37aa99ffd2a3fbb59c2bc1a93c9205}{begin}}();\ it\ !=\ files.\mbox{\hyperlink{classdata__structures_1_1_doubly_linked_list_adc799c58ace1a159ae01f404f6de69be}{end}}();\ ++it)\ \{}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ MerkleNode*\ file\_node\ =\ \textcolor{keyword}{new}\ MerkleNode(it-\/>get\_path(),\ \mbox{\hyperlink{namespacecore_aa43c53b58fc3d424727e7b163f94d0f4abe709e3e811a0cacb74799cbc21fed9f}{BLOB}});}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ header\ =}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}blob\ "{}}\ +\ std::to\_string(it-\/>get\_content().size())\ +\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ file\_node-\/>hash\ =\ calculate\_hash(header\ +\ it-\/>get\_content());}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcore_1_1_merkle_tree_a693029668ed3805f13129372e8ee86d7}{root}}-\/>\mbox{\hyperlink{structcore_1_1_merkle_node_ae220035200beefe71c700caed9d4433b}{children}}.push\_back(file\_node);}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ sort\_children\_by\_name(\mbox{\hyperlink{classcore_1_1_merkle_tree_a693029668ed3805f13129372e8ee86d7}{root}}-\/>children);}
+\DoxyCodeLine{00128\ \ \ \ \ \}}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{void}\ calculate\_hashes\_recursive(MerkleNode*\ node)\ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!node)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (node-\/>type\ ==\ \mbox{\hyperlink{namespacecore_aa43c53b58fc3d424727e7b163f94d0f4abe709e3e811a0cacb74799cbc21fed9f}{BLOB}})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ std::string\ combined\_content\ =\ \textcolor{stringliteral}{"{}tree\ "{}};}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ node-\/>children.begin();\ it\ !=\ node-\/>children.end();\ ++it)\ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ calculate\_hashes\_recursive(*it);}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ combined\_content\ +=\ (*it)-\/>hash\ +\ (*it)-\/>name;}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ node-\/>hash\ =\ calculate\_hash(combined\_content);}
+\DoxyCodeLine{00145\ \ \ \ \ \}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordtype}{void}\ sort\_children\_by\_name(}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ data\_structures::DoublyLinkedList<MerkleNode*>\&\ kids}
+\DoxyCodeLine{00153\ \ \ \ \ )\ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (kids.\mbox{\hyperlink{classdata__structures_1_1_doubly_linked_list_ad3472414609fd75a42175ccf683997fe}{empty}}())\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ swapped;}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ swapped\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ kids.\mbox{\hyperlink{classdata__structures_1_1_doubly_linked_list_aef37aa99ffd2a3fbb59c2bc1a93c9205}{begin}}();}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ next\_it\ =\ kids.\mbox{\hyperlink{classdata__structures_1_1_doubly_linked_list_aef37aa99ffd2a3fbb59c2bc1a93c9205}{begin}}();}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ ++next\_it;}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (next\_it\ !=\ kids.\mbox{\hyperlink{classdata__structures_1_1_doubly_linked_list_adc799c58ace1a159ae01f404f6de69be}{end}}())\ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((*it)-\/>name\ >\ (*next\_it)-\/>name)\ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MerkleNode*\ temp\ =\ *it;}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *it\ =\ *next\_it;}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *next\_it\ =\ temp;}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ swapped\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ++it;}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ++next\_it;}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (swapped);}
+\DoxyCodeLine{00174\ \ \ \ \ \}}
+\DoxyCodeLine{00175\ \};}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \}\ \textcolor{comment}{//\ namespace\ core}}
+
+\end{DoxyCode}

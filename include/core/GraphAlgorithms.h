@@ -1,13 +1,14 @@
 /**
  * @file GraphAlgorithms.h
+ * @brief Graph traversal and analysis algorithms for Commit DAGs.
+ *
  * @author Umut Ertuğrul Daşgın
- * @brief 
- * @version 1.0
+ * @note Documentation maintained by Deniz Kayra Aydın / Ömer Kağan Zafer.
+ * @version 1.1
  * @date 2025-12-25
- * 
- * @copyright Copyright (c) 2025
- * 
+ * @lastModified 2026-01-10
  */
+
 
 #pragma once
 
@@ -18,110 +19,132 @@
 #include "../entities/Commit.h"
 
 namespace core {
-    class GraphAlgorithms {
-    public:
-        GraphAlgorithms() = delete;
 
-        static data_structures::Stack<entities::Commit*> get_history_dfs(entities::Commit* start) {
-            data_structures::Stack<entities::Commit*> history;
+/**
+ * @brief Static utility algorithms for commit graphs.
+ * * Operates on commit DAG structures
+ * * Contains no state and owns no memory
+ */
+class GraphAlgorithms {
+public:
+    GraphAlgorithms() = delete;
 
-            if (!start) return history;
+    /**
+     * @brief Performs depth-first traversal of commit history.
+     * @param start Starting commit.
+     * @return Stack of visited commits.
+     */
+    static data_structures::Stack<entities::Commit*>
+    get_history_dfs(entities::Commit* start) {
 
-            data_structures::HashTable<std::string, bool> visited;
-            data_structures::Stack<entities::Commit*> st;
+        data_structures::Stack<entities::Commit*> history;
 
-            st.push(start);
-            visited.put(start->get_id(), true);
+        if (!start) return history;
 
-            while (!st.empty()) {
-                entities::Commit* curr = st.top();
-                st.pop();
+        data_structures::HashTable<std::string, bool> visited;
+        data_structures::Stack<entities::Commit*> st;
 
-                history.push(curr);
+        st.push(start);
+        visited.put(start->get_id(), true);
 
-                if (curr->get_parent1()) {
-                    std::string p1_id = curr->get_parent1()->get_id();
+        while (!st.empty()) {
+            entities::Commit* curr = st.top();
+            st.pop();
 
-                    if (!visited.contains(p1_id)) {
-                        st.push(curr->get_parent1());
-                        visited.put(p1_id, true);
-                    }
-                }
+            history.push(curr);
 
-                if (curr->get_parent2()) {
-                    std::string p2_id = curr->get_parent2()->get_id();
-
-                    if (!visited.contains(p2_id)) {
-                        st.push(curr->get_parent2());
-                        visited.put(p2_id, true);
-                    }
+            if (curr->get_parent1()) {
+                std::string p1_id = curr->get_parent1()->get_id();
+                if (!visited.contains(p1_id)) {
+                    st.push(curr->get_parent1());
+                    visited.put(p1_id, true);
                 }
             }
 
-            return history;
+            if (curr->get_parent2()) {
+                std::string p2_id = curr->get_parent2()->get_id();
+                if (!visited.contains(p2_id)) {
+                    st.push(curr->get_parent2());
+                    visited.put(p2_id, true);
+                }
+            }
         }
 
-        static entities::Commit* find_merge_base(entities::Commit* c1, entities::Commit* c2) {
-            if (!c1 || !c2) return nullptr;
-            if (c1->get_id() == c2->get_id()) return c1;
+        return history;
+    }
 
-            data_structures::HashTable<std::string, bool> ancestors1;
-            data_structures::Queue<entities::Commit*> q;
+    /**
+     * @brief Finds the nearest common ancestor of two commits.
+     * @param c1 First commit.
+     * @param c2 Second commit.
+     * @return Merge base commit or nullptr.
+     */
+    static entities::Commit*
+    find_merge_base(entities::Commit* c1, entities::Commit* c2) {
 
-            q.enqueue(c1);
-            ancestors1.put(c1->get_id(), true);
+        if (!c1 || !c2) return nullptr;
+        if (c1->get_id() == c2->get_id()) return c1;
 
-            while (!q.empty()) {
-                entities::Commit* curr = q.front();
-                q.dequeue();
+        data_structures::HashTable<std::string, bool> ancestors1;
+        data_structures::Queue<entities::Commit*> q;
 
-                if (curr->get_parent1()) {
-                    std::string p1 = curr->get_parent1()->get_id();
-                    if (!ancestors1.contains(p1)) {
-                        ancestors1.put(p1, true);
-                        q.enqueue(curr->get_parent1());
-                    }
-                }
+        q.enqueue(c1);
+        ancestors1.put(c1->get_id(), true);
 
-                if (curr->get_parent2()) {
-                    std::string p2 = curr->get_parent2()->get_id();
-                    if (!ancestors1.contains(p2)) {
-                        ancestors1.put(p2, true);
-                        q.enqueue(curr->get_parent2());
-                    }
-                }
-            }
+        while (!q.empty()) {
+            entities::Commit* curr = q.front();
+            q.dequeue();
 
-            data_structures::Queue<entities::Commit*> q2;
-            data_structures::HashTable<std::string, bool> visited2;
-
-            q2.enqueue(c2);
-            visited2.put(c2->get_id(), true);
-
-            while (!q2.empty()) {
-                entities::Commit* curr = q2.front();
-                q2.dequeue();
-
-                if (ancestors1.contains(curr->get_id())) { return curr; }
-
-                if (curr->get_parent1()) {
-                    std::string p1 = curr->get_parent1()->get_id();
-                    if (!visited2.contains(p1)) {
-                        visited2.put(p1, true);
-                        q2.enqueue(curr->get_parent1());
-                    }
-                }
-
-                if (curr->get_parent2()) {
-                    std::string p2 = curr->get_parent2()->get_id();
-                    if (!visited2.contains(p2)) {
-                        visited2.put(p2, true);
-                        q2.enqueue(curr->get_parent2());
-                    }
+            if (curr->get_parent1()) {
+                std::string p1 = curr->get_parent1()->get_id();
+                if (!ancestors1.contains(p1)) {
+                    ancestors1.put(p1, true);
+                    q.enqueue(curr->get_parent1());
                 }
             }
 
-            return nullptr;
+            if (curr->get_parent2()) {
+                std::string p2 = curr->get_parent2()->get_id();
+                if (!ancestors1.contains(p2)) {
+                    ancestors1.put(p2, true);
+                    q.enqueue(curr->get_parent2());
+                }
+            }
         }
-    };
-}
+
+        data_structures::Queue<entities::Commit*> q2;
+        data_structures::HashTable<std::string, bool> visited2;
+
+        q2.enqueue(c2);
+        visited2.put(c2->get_id(), true);
+
+        while (!q2.empty()) {
+            entities::Commit* curr = q2.front();
+            q2.dequeue();
+
+            if (ancestors1.contains(curr->get_id())) {
+                return curr;
+            }
+
+            if (curr->get_parent1()) {
+                std::string p1 = curr->get_parent1()->get_id();
+                if (!visited2.contains(p1)) {
+                    visited2.put(p1, true);
+                    q2.enqueue(curr->get_parent1());
+                }
+            }
+
+            if (curr->get_parent2()) {
+                std::string p2 = curr->get_parent2()->get_id();
+                if (!visited2.contains(p2)) {
+                    visited2.put(p2, true);
+                    q2.enqueue(curr->get_parent2());
+                }
+            }
+        }
+
+        return nullptr;
+    }
+};
+
+} // namespace core

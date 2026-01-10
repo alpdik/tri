@@ -1,0 +1,80 @@
+\doxysection{core\+::Graph\+Manager Class Reference}
+\hypertarget{classcore_1_1_graph_manager}{}\label{classcore_1_1_graph_manager}\index{core::GraphManager@{core::GraphManager}}
+
+
+{\ttfamily \#include $<$Graph\+Manager.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcore_1_1_graph_manager_a44813a1aa28f4397c4f10dcf9d73d23d}{Graph\+Manager}} ()=default
+\item 
+\mbox{\hyperlink{classcore_1_1_graph_manager_a44b18d95fc3b49ea6e8a7e0cc492723e}{\texorpdfstring{$\sim$}{\string~}\+Graph\+Manager}} ()
+\item 
+void \mbox{\hyperlink{classcore_1_1_graph_manager_a8e50408ee6b8fdefe5a4c36ee9d22d7f}{add\+\_\+commit}} (\mbox{\hyperlink{classentities_1_1_commit}{entities\+::\+Commit}} \texorpdfstring{$\ast$}{*}commit)
+\item 
+bool \mbox{\hyperlink{classcore_1_1_graph_manager_ab3db37cf79682f2d3f4be9d30ad1d4fe}{contains}} (const std\+::string \&id) const
+\item 
+\mbox{\hyperlink{classentities_1_1_commit}{entities\+::\+Commit}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classcore_1_1_graph_manager_a449444bb96575fa10d4b262480f26615}{get\+\_\+commit}} (const std\+::string \&id)
+\item 
+void \mbox{\hyperlink{classcore_1_1_graph_manager_aa136799824378c785ae352eb0bddc4ea}{save\+\_\+blob}} (const std\+::string \&hash, const std\+::string \&content)
+\item 
+std\+::string \mbox{\hyperlink{classcore_1_1_graph_manager_a19147bcce2799c3c06434812434e1a3a}{get\+\_\+blob\+\_\+content}} (const std\+::string \&hash)
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classcore_1_1_graph_manager_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcore_1_1_graph_manager_a44813a1aa28f4397c4f10dcf9d73d23d}\index{core::GraphManager@{core::GraphManager}!GraphManager@{GraphManager}}
+\index{GraphManager@{GraphManager}!core::GraphManager@{core::GraphManager}}
+\doxysubsubsection{\texorpdfstring{GraphManager()}{GraphManager()}}
+{\footnotesize\ttfamily \label{classcore_1_1_graph_manager_a44813a1aa28f4397c4f10dcf9d73d23d} 
+core\+::\+Graph\+Manager\+::\+Graph\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{classcore_1_1_graph_manager_a44b18d95fc3b49ea6e8a7e0cc492723e}\index{core::GraphManager@{core::GraphManager}!````~GraphManager@{\texorpdfstring{$\sim$}{\string~}GraphManager}}
+\index{````~GraphManager@{\texorpdfstring{$\sim$}{\string~}GraphManager}!core::GraphManager@{core::GraphManager}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}GraphManager()}{\string~GraphManager()}}
+{\footnotesize\ttfamily \label{classcore_1_1_graph_manager_a44b18d95fc3b49ea6e8a7e0cc492723e} 
+core\+::\+Graph\+Manager\+::\texorpdfstring{$\sim$}{\string~}\+Graph\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classcore_1_1_graph_manager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcore_1_1_graph_manager_a8e50408ee6b8fdefe5a4c36ee9d22d7f}\index{core::GraphManager@{core::GraphManager}!add\_commit@{add\_commit}}
+\index{add\_commit@{add\_commit}!core::GraphManager@{core::GraphManager}}
+\doxysubsubsection{\texorpdfstring{add\_commit()}{add\_commit()}}
+{\footnotesize\ttfamily \label{classcore_1_1_graph_manager_a8e50408ee6b8fdefe5a4c36ee9d22d7f} 
+void core\+::\+Graph\+Manager\+::add\+\_\+commit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classentities_1_1_commit}{entities\+::\+Commit}} \texorpdfstring{$\ast$}{*}}]{commit}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classcore_1_1_graph_manager_ab3db37cf79682f2d3f4be9d30ad1d4fe}\index{core::GraphManager@{core::GraphManager}!contains@{contains}}
+\index{contains@{contains}!core::GraphManager@{core::GraphManager}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily \label{classcore_1_1_graph_manager_ab3db37cf79682f2d3f4be9d30ad1d4fe} 
+bool core\+::\+Graph\+Manager\+::contains (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classcore_1_1_graph_manager_a19147bcce2799c3c06434812434e1a3a}\index{core::GraphManager@{core::GraphManager}!get\_blob\_content@{get\_blob\_content}}
+\index{get\_blob\_content@{get\_blob\_content}!core::GraphManager@{core::GraphManager}}
+\doxysubsubsection{\texorpdfstring{get\_blob\_content()}{get\_blob\_content()}}
+{\footnotesize\ttfamily \label{classcore_1_1_graph_manager_a19147bcce2799c3c06434812434e1a3a} 
+std\+::string core\+::\+Graph\+Manager\+::get\+\_\+blob\+\_\+content (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{hash}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classcore_1_1_graph_manager_a449444bb96575fa10d4b262480f26615}\index{core::GraphManager@{core::GraphManager}!get\_commit@{get\_commit}}
+\index{get\_commit@{get\_commit}!core::GraphManager@{core::GraphManager}}
+\doxysubsubsection{\texorpdfstring{get\_commit()}{get\_commit()}}
+{\footnotesize\ttfamily \label{classcore_1_1_graph_manager_a449444bb96575fa10d4b262480f26615} 
+\mbox{\hyperlink{classentities_1_1_commit}{entities\+::\+Commit}} \texorpdfstring{$\ast$}{*} core\+::\+Graph\+Manager\+::get\+\_\+commit (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classcore_1_1_graph_manager_aa136799824378c785ae352eb0bddc4ea}\index{core::GraphManager@{core::GraphManager}!save\_blob@{save\_blob}}
+\index{save\_blob@{save\_blob}!core::GraphManager@{core::GraphManager}}
+\doxysubsubsection{\texorpdfstring{save\_blob()}{save\_blob()}}
+{\footnotesize\ttfamily \label{classcore_1_1_graph_manager_aa136799824378c785ae352eb0bddc4ea} 
+void core\+::\+Graph\+Manager\+::save\+\_\+blob (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{hash}{, }\item[{const std\+::string \&}]{content}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/core/\mbox{\hyperlink{_graph_manager_8h}{Graph\+Manager.\+h}}\end{DoxyCompactItemize}
