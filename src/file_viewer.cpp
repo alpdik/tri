@@ -1,7 +1,12 @@
-//
-// Created by alpdi on 9/1/2026.
-//
-// File: `src/file_viewer.cpp`
+/**
+ * @file file_viewer.cpp
+ * @author Alp Dikmen
+ * @date 2026-01-09
+ * 
+ * @copyright Copyright (c) 2026
+ * 
+ */
+
 #include "file_viewer.hpp"
 
 #include <fstream>

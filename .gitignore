@@ -1,6 +1,43 @@
+# IDE files
 .idea/
-.DS_Store/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Windows
 .NUL/
+
+# Build outputs
+build/
+*.o
+*.a
+*.so
+*.dylib
+*.dll
+*.exe
+tri
+
+# Doxygen generated files
+docs/html/
+docs/latex/
+
+# Media files
 /showcase.mp4
-html/
-latex/
+*.mp4
+*.mov
+
+# Temporary files
+*.tmp
+*.log
+*.cache

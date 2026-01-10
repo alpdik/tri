@@ -64,6 +64,7 @@ private:
      * @return Pointer to the node at the given index.
      *
      * @throws std::out_of_range if index is out of bounds.
+     * @note Time complexity: O(min(idx, size()-idx))
      */
     Node* node_at(std::size_t idx) const {
         if (idx >= size_) throw std::out_of_range("DoublyLinkedList::node_at out of range");
@@ -85,6 +86,7 @@ private:
      * @details Updates neighboring node links and releases memory.
      *
      * @param[in] node Pointer to the node to be deleted.
+     * @note Time complexity: O(1)
      */
     void delete_node(Node* node) {
         if (!node) return;
@@ -103,6 +105,7 @@ private:
      * @brief Clears all nodes from the list.
      *
      * @details Deallocates all internal nodes and resets the list state.
+     * @note Time complexity: O(n) where n is the number of elements.
      */
     void clear_internal() noexcept {
         Node* temp = head_;
@@ -136,11 +139,13 @@ public:
 
     /**
      * @brief Constructs an empty list.
+     * @note Time complexity: O(1)
      */
     DoublyLinkedList() noexcept : head_(nullptr), tail_(nullptr), size_(0) {}
 
     /**
      * @brief Destroys the list and releases all allocated nodes.
+     * @note Time complexity: O(n) where n is the number of elements.
      */
     ~DoublyLinkedList() { clear_internal(); }
 
@@ -150,6 +155,7 @@ public:
      * @details Creates a deep copy of another list.
      *
      * @param[in] other List to copy from.
+     * @note Time complexity: O(n) where n is the number of elements in other.
      */
     DoublyLinkedList(const DoublyLinkedList& other) : head_(nullptr), tail_(nullptr), size_(0) {
         for (Node* curr = other.head_; curr != nullptr; curr = curr->next) {
@@ -162,6 +168,7 @@ public:
      *
      * @param[in] other List to assign from.
      * @return Reference to this list.
+     * @note Time complexity: O(n + m) where n is the current size and m is other.size().
      */
     DoublyLinkedList& operator=(const DoublyLinkedList& other) {
         if (this == &other) return *this;
@@ -178,6 +185,7 @@ public:
      * @details Transfers ownership of nodes from another list.
      *
      * @param[in] other List to move from.
+     * @note Time complexity: O(1)
      */
     DoublyLinkedList(DoublyLinkedList&& other) noexcept
         : head_(other.head_), tail_(other.tail_), size_(other.size_) {
@@ -190,6 +198,7 @@ public:
      *
      * @param[in] other List to move from.
      * @return Reference to this list.
+     * @note Time complexity: O(n) where n is the current size of this list.
      */
     DoublyLinkedList& operator=(DoublyLinkedList&& other) noexcept {
         if (this == &other) return *this;
@@ -204,26 +213,31 @@ public:
 
     /**
      * @brief Returns the number of elements in the list.
+     * @note Time complexity: O(1)
      */
     std::size_t size() const noexcept { return size_; }
 
     /**
      * @brief Checks whether the list is empty.
+     * @note Time complexity: O(1)
      */
     bool empty() const noexcept { return size_ == 0; }
 
     /**
      * @brief Removes all elements from the list.
+     * @note Time complexity: O(n) where n is the number of elements.
      */
     void clear() { clear_internal(); }
 
     /**
      * @brief Returns an iterator to the beginning of the list.
+     * @note Time complexity: O(1)
      */
     iterator begin() const { return iterator(head_); }
 
     /**
      * @brief Returns an iterator to the end of the list.
+     * @note Time complexity: O(1)
      */
     iterator end() const { return iterator(nullptr); }
 
@@ -232,6 +246,7 @@ public:
      *
      * @param[in] predicate Function used to test elements.
      * @return Iterator to the matching element or end().
+     * @note Time complexity: O(n) where n is the number of elements.
      */
     iterator find(std::function<bool(const T&)> predicate) {
         Node* temp = head_;
@@ -247,6 +262,7 @@ public:
      *
      * @param[in] val Value to remove.
      * @return true if the value was found and removed.
+     * @note Time complexity: O(n) where n is the number of elements.
      */
     bool remove(const T& val) {
         Node* temp = head_;
@@ -267,6 +283,7 @@ public:
      * @param[in] v Value to insert.
      *
      * @throws std::out_of_range if index is invalid.
+     * @note Time complexity: O(min(idx, size()-idx)) due to optimized traversal.
      */
     void insert(std::size_t idx, const T& v) {
         if (idx > size_) throw std::out_of_range("DoublyLinkedList::insert pos out of range");
@@ -288,6 +305,7 @@ public:
      * @brief Erases the element at the given index.
      *
      * @param[in] idx Index of the element to remove.
+     * @note Time complexity: O(min(idx, size()-idx)) due to optimized traversal.
      */
     void erase(std::size_t idx) {
         Node* node = node_at(idx);
@@ -296,6 +314,7 @@ public:
 
     /**
      * @brief Appends an element to the end of the list.
+     * @note Time complexity: O(1)
      */
     void push_back(const T& v) {
         Node* node = new Node(v);
@@ -307,6 +326,7 @@ public:
 
     /**
      * @brief Appends a movable element to the end of the list.
+     * @note Time complexity: O(1)
      */
     void push_back(T&& v) {
         Node* node = new Node(std::move(v));
@@ -318,6 +338,7 @@ public:
 
     /**
      * @brief Inserts an element at the front of the list.
+     * @note Time complexity: O(1)
      */
     void push_front(const T& v) {
         Node* node = new Node(v);
@@ -331,6 +352,7 @@ public:
      * @brief Removes the last element of the list.
      *
      * @throws std::out_of_range if the list is empty.
+     * @note Time complexity: O(1)
      */
     void pop_back() {
         if (empty()) throw std::out_of_range("DoublyLinkedList::pop_back empty");
@@ -341,6 +363,7 @@ public:
      * @brief Removes the first element of the list.
      *
      * @throws std::out_of_range if the list is empty.
+     * @note Time complexity: O(1)
      */
     void pop_front() {
         if (empty()) throw std::out_of_range("DoublyLinkedList::pop_front empty");
@@ -349,6 +372,7 @@ public:
 
     /**
      * @brief Returns the first element.
+     * @note Time complexity: O(1)
      */
     T& front() {
         if (empty()) throw std::out_of_range("DoublyLinkedList::front empty");
@@ -357,6 +381,7 @@ public:
 
     /**
      * @brief Returns the first element (const).
+     * @note Time complexity: O(1)
      */
     const T& front() const {
         if (empty()) throw std::out_of_range("DoublyLinkedList::front empty");
@@ -365,6 +390,7 @@ public:
 
     /**
      * @brief Returns the last element.
+     * @note Time complexity: O(1)
      */
     T& back() {
         if (empty()) throw std::out_of_range("DoublyLinkedList::back empty");
@@ -373,6 +399,7 @@ public:
 
     /**
      * @brief Returns the last element (const).
+     * @note Time complexity: O(1)
      */
     const T& back() const {
         if (empty()) throw std::out_of_range("DoublyLinkedList::back empty");

@@ -275,6 +275,25 @@ public:
     }
 
     /**
+     * @brief Retrieves the value associated with a key (const version).
+     *
+     * @param[in] key Key to look up.
+     * @return Const reference to the associated value.
+     *
+     * @throws std::runtime_error if the key is not found.
+     * @note Time complexity: O(1) average case, O(n) worst case.
+     */
+    const V& get(const K& key) const {
+        std::size_t idx = hash_func(key);
+        const HashEntry* entry = buckets_[idx];
+        while (entry) {
+            if (entry->key == key) return entry->value;
+            entry = entry->next;
+        }
+        throw std::runtime_error("HashTable::get key not found");
+    }
+
+    /**
      * @brief Checks whether a key exists in the table.
      *
      * @param[in] key Key to check.
