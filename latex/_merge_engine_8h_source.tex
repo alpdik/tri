@@ -1,0 +1,141 @@
+\doxysection{Merge\+Engine.\+h}
+\hypertarget{_merge_engine_8h_source}{}\label{_merge_engine_8h_source}\index{include/core/MergeEngine.h@{include/core/MergeEngine.h}}
+\doxymbox{\hyperlink{_merge_engine_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <iostream>}\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_graph_algorithms_8h}{GraphAlgorithms.h}}"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_graph_manager_8h}{GraphManager.h}}"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_commit_8h}{../entities/Commit.h}}"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_file_8h}{../entities/File.h}}"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_doubly_linked_list_8h}{../data\_structures/DoublyLinkedList.h}}"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_hash_table_8h}{../data\_structures/HashTable.h}}"{}}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespacecore}{core}}\ \{}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classcore_1_1_merge_engine_a9d995ab1ac035174d69bc5556200b689}{MergeEngine}}\ \{\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classcore_1_1_merge_engine_a9d995ab1ac035174d69bc5556200b689}{MergeEngine}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classdata__structures_1_1_doubly_linked_list}{data\_structures::DoublyLinkedList<entities::File>}}\ \doxymbox{\hyperlink{classcore_1_1_merge_engine_a001f097c7c23f8a38b40bed7d6c3cc80}{merge\_commits}}(}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classentities_1_1_commit}{entities::Commit}}*\ ours,\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classentities_1_1_commit}{entities::Commit}}*\ theirs,\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classcore_1_1_graph_manager}{GraphManager}}\&\ graph\_mgr,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\&\ out\_conflict\_msg)\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classdata__structures_1_1_doubly_linked_list}{data\_structures::DoublyLinkedList<entities::File>}}\ result\_files;}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classentities_1_1_commit}{entities::Commit}}*\ base\ =\ \doxymbox{\hyperlink{classcore_1_1_graph_algorithms_a61c065b6ae8ff486d4937c262f68620e}{GraphAlgorithms::find\_merge\_base}}(ours,\ theirs);}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ map\_ours\ \ \ =\ create\_file\_map(ours);}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ map\_theirs\ =\ create\_file\_map(theirs);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ map\_base\ \ \ =\ create\_file\_map(base);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classdata__structures_1_1_hash_table}{data\_structures::HashTable<std::string,\ bool>}}\ all\_paths;}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ add\_paths\ =\ [\&](\textcolor{keyword}{const}\ \doxymbox{\hyperlink{classdata__structures_1_1_doubly_linked_list}{data\_structures::DoublyLinkedList<entities::File>}}\&\ list)\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ it\ =\ list.begin();\ it\ !=\ list.end();\ ++it)\ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ all\_paths.\doxymbox{\hyperlink{classdata__structures_1_1_hash_table_a8777b7d985f49991d32b8f60dd670591}{put}}(it-\/>get\_path(),\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ add\_paths(ours-\/>\doxymbox{\hyperlink{classentities_1_1_commit_aa9cab2f0605657ad8d3ddd3abb67a909}{get\_files}}());}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ add\_paths(theirs-\/>\doxymbox{\hyperlink{classentities_1_1_commit_aa9cab2f0605657ad8d3ddd3abb67a909}{get\_files}}());}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(base)\ add\_paths(base-\/>\doxymbox{\hyperlink{classentities_1_1_commit_aa9cab2f0605657ad8d3ddd3abb67a909}{get\_files}}());}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ our\_files\_list\ =\ ours-\/>\doxymbox{\hyperlink{classentities_1_1_commit_aa9cab2f0605657ad8d3ddd3abb67a909}{get\_files}}();}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ our\_files\_list.begin();\ it\ !=\ our\_files\_list.end();\ ++it)\ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ path\ =\ it-\/>get\_path();}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ hash\_ours\ =\ it-\/>get\_hash();}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ hash\_theirs\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (map\_theirs.contains(path))\ hash\_theirs\ =\ map\_theirs.get(path);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ hash\_base\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (map\_base.contains(path))\ hash\_base\ =\ map\_base.get(path);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (hash\_theirs\ ==\ \textcolor{stringliteral}{"{}"{}})\ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (hash\_base\ ==\ \textcolor{stringliteral}{"{}"{}})\ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result\_files.\doxymbox{\hyperlink{classdata__structures_1_1_doubly_linked_list_ab4adcbbb5ff06d634ad96c614f988ea1}{push\_back}}(*it);}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (hash\_base\ ==\ hash\_ours)\ \{\ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ out\_conflict\_msg\ +=\ \textcolor{stringliteral}{"{}CONFLICT\ (Modify/Delete):\ "{}}\ +\ path\ +\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result\_files.\doxymbox{\hyperlink{classdata__structures_1_1_doubly_linked_list_ab4adcbbb5ff06d634ad96c614f988ea1}{push\_back}}(*it);}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ }
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (hash\_ours\ ==\ hash\_theirs)\ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result\_files.\doxymbox{\hyperlink{classdata__structures_1_1_doubly_linked_list_ab4adcbbb5ff06d634ad96c614f988ea1}{push\_back}}(*it);}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (hash\_ours\ ==\ hash\_base)\ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classentities_1_1_file}{entities::File}}\ file\_from\_theirs(path,\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ file\_from\_theirs.\doxymbox{\hyperlink{classentities_1_1_file_a4b2ae1a5b763e88dc918bba0fec5493f}{set\_hash\_manual}}(hash\_theirs);}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result\_files.\doxymbox{\hyperlink{classdata__structures_1_1_doubly_linked_list_ab4adcbbb5ff06d634ad96c614f988ea1}{push\_back}}(file\_from\_theirs);}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (hash\_theirs\ ==\ hash\_base)\ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result\_files.\doxymbox{\hyperlink{classdata__structures_1_1_doubly_linked_list_ab4adcbbb5ff06d634ad96c614f988ea1}{push\_back}}(*it);}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ out\_conflict\_msg\ +=\ \textcolor{stringliteral}{"{}CONFLICT\ (Content):\ "{}}\ +\ path\ +\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ content\_ours\ =\ graph\_mgr.\doxymbox{\hyperlink{classcore_1_1_graph_manager_a7a7b489ebfa1b5161b7ad4f5bc36a0c7}{get\_blob\_content}}(hash\_ours);}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ content\_theirs\ =\ graph\_mgr.\doxymbox{\hyperlink{classcore_1_1_graph_manager_a7a7b489ebfa1b5161b7ad4f5bc36a0c7}{get\_blob\_content}}(hash\_theirs);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ conflict\_text\ =\ }
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}<<<<<<<\ HEAD\(\backslash\)n"{}}\ +\ content\_ours\ +\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ +}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}=======\(\backslash\)n"{}}\ +\ content\_theirs\ +\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ +}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}>>>>>>>\ "{}}\ +\ theirs-\/>\doxymbox{\hyperlink{classentities_1_1_commit_a9010e46341002c13259e1110f3c088f4}{get\_id}}().substr(0,7)\ +\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classentities_1_1_file}{entities::File}}\ conflict\_file(path,\ conflict\_text);}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result\_files.\doxymbox{\hyperlink{classdata__structures_1_1_doubly_linked_list_ab4adcbbb5ff06d634ad96c614f988ea1}{push\_back}}(conflict\_file);}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ their\_files\_list\ =\ theirs-\/>\doxymbox{\hyperlink{classentities_1_1_commit_aa9cab2f0605657ad8d3ddd3abb67a909}{get\_files}}();}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ their\_files\_list.begin();\ it\ !=\ their\_files\_list.end();\ ++it)\ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ path\ =\ it-\/>get\_path();}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (map\_ours.contains(path))\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ hash\_base\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (map\_base.contains(path))\ hash\_base\ =\ map\_base.get(path);}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (hash\_base\ ==\ \textcolor{stringliteral}{"{}"{}})\ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result\_files.\doxymbox{\hyperlink{classdata__structures_1_1_doubly_linked_list_ab4adcbbb5ff06d634ad96c614f988ea1}{push\_back}}(*it);}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it-\/>get\_hash()\ ==\ hash\_base)\ \{\ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ out\_conflict\_msg\ +=\ \textcolor{stringliteral}{"{}CONFLICT\ (Delete/Modify):\ "{}}\ +\ path\ +\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result\_files.\doxymbox{\hyperlink{classdata__structures_1_1_doubly_linked_list_ab4adcbbb5ff06d634ad96c614f988ea1}{push\_back}}(*it);}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result\_files;}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classdata__structures_1_1_hash_table}{data\_structures::HashTable<std::string,\ std::string>}}\ create\_file\_map(\doxymbox{\hyperlink{classentities_1_1_commit}{entities::Commit}}*\ c)\ \{}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classdata__structures_1_1_hash_table}{data\_structures::HashTable<std::string,\ std::string>}}\ map;}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!c)\ \textcolor{keywordflow}{return}\ map;}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ files\ =\ c-\/>\doxymbox{\hyperlink{classentities_1_1_commit_aa9cab2f0605657ad8d3ddd3abb67a909}{get\_files}}();}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ files.begin();\ it\ !=\ files.end();\ ++it)\ \{}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ map.\doxymbox{\hyperlink{classdata__structures_1_1_hash_table_a8777b7d985f49991d32b8f60dd670591}{put}}(it-\/>get\_path(),\ it-\/>get\_hash());}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ map;}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00183\ \ \ \ \ \};}
+\DoxyCodeLine{00184\ \}}
+
+\end{DoxyCode}

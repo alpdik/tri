@@ -1,0 +1,88 @@
+\doxysection{core::\+Repository Class Reference}
+\hypertarget{classcore_1_1_repository}{}\label{classcore_1_1_repository}\index{core::Repository@{core::Repository}}
+
+
+{\ttfamily \+\#include $<$Repository.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classcore_1_1_repository_a98a9280e9cf1a0e481b7eabf0a614a99}{Repository}} ()
+\item 
+void \doxymbox{\hyperlink{classcore_1_1_repository_a93746d04c3fb72eb405390c2603165ef}{add}} (const std::\+string \&path, const std::\+string \&content)
+\item 
+std::\+string \doxymbox{\hyperlink{classcore_1_1_repository_ac91e2083d479e78a62e8b1b5810f7475}{commit}} (const std::\+string \&message, const std::\+string author)
+\item 
+void \doxymbox{\hyperlink{classcore_1_1_repository_acedc227b8b3d1b439a545be2aed2f463}{checkout}} (const std::\+string \&name)
+\item 
+void \doxymbox{\hyperlink{classcore_1_1_repository_aff258c5ebfdd3c9198be2fe9265d753d}{merge}} (const std::\+string \&branch\+\_\+name)
+\item 
+void \doxymbox{\hyperlink{classcore_1_1_repository_a325f064481b220be100ee10605c5199a}{log}} ()
+\item 
+void \doxymbox{\hyperlink{classcore_1_1_repository_ac0a0bb38c4b0e136a89f6c997685df5e}{create\+\_\+branch}} (const std::\+string \&name)
+\item 
+std::\+string \doxymbox{\hyperlink{classcore_1_1_repository_acce99b94f41e4ca9d8e1369f9ed2152c}{get\+\_\+current\+\_\+branch\+\_\+name}} ()
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classcore_1_1_repository_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcore_1_1_repository_a98a9280e9cf1a0e481b7eabf0a614a99}\index{core::Repository@{core::Repository}!Repository@{Repository}}
+\index{Repository@{Repository}!core::Repository@{core::Repository}}
+\doxysubsubsection{\texorpdfstring{Repository()}{Repository()}}
+{\footnotesize\ttfamily \label{classcore_1_1_repository_a98a9280e9cf1a0e481b7eabf0a614a99} 
+core::\+\+Repository::\+\+Repository (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classcore_1_1_repository_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcore_1_1_repository_a93746d04c3fb72eb405390c2603165ef}\index{core::Repository@{core::Repository}!add@{add}}
+\index{add@{add}!core::Repository@{core::Repository}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily \label{classcore_1_1_repository_a93746d04c3fb72eb405390c2603165ef} 
+void core::\+\+Repository::\+add (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{path}{, }\item[{const std::\+string \&}]{content}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classcore_1_1_repository_acedc227b8b3d1b439a545be2aed2f463}\index{core::Repository@{core::Repository}!checkout@{checkout}}
+\index{checkout@{checkout}!core::Repository@{core::Repository}}
+\doxysubsubsection{\texorpdfstring{checkout()}{checkout()}}
+{\footnotesize\ttfamily \label{classcore_1_1_repository_acedc227b8b3d1b439a545be2aed2f463} 
+void core::\+\+Repository::\+checkout (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classcore_1_1_repository_ac91e2083d479e78a62e8b1b5810f7475}\index{core::Repository@{core::Repository}!commit@{commit}}
+\index{commit@{commit}!core::Repository@{core::Repository}}
+\doxysubsubsection{\texorpdfstring{commit()}{commit()}}
+{\footnotesize\ttfamily \label{classcore_1_1_repository_ac91e2083d479e78a62e8b1b5810f7475} 
+std::\+string core::\+\+Repository::\+commit (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{message}{, }\item[{const std::\+string}]{author}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classcore_1_1_repository_ac0a0bb38c4b0e136a89f6c997685df5e}\index{core::Repository@{core::Repository}!create\_branch@{create\_branch}}
+\index{create\_branch@{create\_branch}!core::Repository@{core::Repository}}
+\doxysubsubsection{\texorpdfstring{create\_branch()}{create\_branch()}}
+{\footnotesize\ttfamily \label{classcore_1_1_repository_ac0a0bb38c4b0e136a89f6c997685df5e} 
+void core::\+\+Repository::\+create\+\_\+branch (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classcore_1_1_repository_acce99b94f41e4ca9d8e1369f9ed2152c}\index{core::Repository@{core::Repository}!get\_current\_branch\_name@{get\_current\_branch\_name}}
+\index{get\_current\_branch\_name@{get\_current\_branch\_name}!core::Repository@{core::Repository}}
+\doxysubsubsection{\texorpdfstring{get\_current\_branch\_name()}{get\_current\_branch\_name()}}
+{\footnotesize\ttfamily \label{classcore_1_1_repository_acce99b94f41e4ca9d8e1369f9ed2152c} 
+std::\+string core::\+\+Repository::\+get\+\_\+current\+\_\+branch\+\_\+name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classcore_1_1_repository_a325f064481b220be100ee10605c5199a}\index{core::Repository@{core::Repository}!log@{log}}
+\index{log@{log}!core::Repository@{core::Repository}}
+\doxysubsubsection{\texorpdfstring{log()}{log()}}
+{\footnotesize\ttfamily \label{classcore_1_1_repository_a325f064481b220be100ee10605c5199a} 
+void core::\+\+Repository::\+log (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classcore_1_1_repository_aff258c5ebfdd3c9198be2fe9265d753d}\index{core::Repository@{core::Repository}!merge@{merge}}
+\index{merge@{merge}!core::Repository@{core::Repository}}
+\doxysubsubsection{\texorpdfstring{merge()}{merge()}}
+{\footnotesize\ttfamily \label{classcore_1_1_repository_aff258c5ebfdd3c9198be2fe9265d753d} 
+void core::\+\+Repository::\+merge (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{branch\+\_\+name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+include/\+core/\+\doxymbox{\hyperlink{_repository_8h}{Repository.\+h}}\end{DoxyCompactItemize}

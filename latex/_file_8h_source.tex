@@ -1,0 +1,52 @@
+\doxysection{File.\+h}
+\hypertarget{_file_8h_source}{}\label{_file_8h_source}\index{include/entities/File.h@{include/entities/File.h}}
+\doxymbox{\hyperlink{_file_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceentities}{entities}}\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classentities_1_1_file_a1767fbaa48a1f39f0f0fa07591336724}{File}}\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ std::string\ path\_;}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ std::string\ content\_;}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ std::string\ hash\_;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ std::string\ calculate\_hash()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ std::hash<std::string>\ hasher;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ std::size\_t\ hash\_val\ =\ hasher(content\_\ +\ path\_);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ ss\ <<\ std::hex\ <<\ std::setw(16)\ <<\ std::setfill(\textcolor{charliteral}{'0'})\ <<\ hash\_val;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ss.str();}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classentities_1_1_file_a1767fbaa48a1f39f0f0fa07591336724}{File}}(\textcolor{keyword}{const}\ std::string\&\ path,\ \textcolor{keyword}{const}\ std::string\&\ content)\ :\ path\_(path),\ content\_(content)\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ hash\_\ =\ calculate\_hash();}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classentities_1_1_file_a47f7e1ff62b07272767c0731bf765091}{File}}()\ :\ path\_(\textcolor{stringliteral}{"{}"{}}),\ content\_(\textcolor{stringliteral}{"{}"{}}),\ hash\_(\textcolor{stringliteral}{"{}"{}})\ \{\}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \doxymbox{\hyperlink{classentities_1_1_file_aa539970de4d18d486438fcc7f79323df}{get\_path}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ path\_;\ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \doxymbox{\hyperlink{classentities_1_1_file_a6519c141a45695f60a080823860fc1bc}{get\_content}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ content\_;\ \}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \doxymbox{\hyperlink{classentities_1_1_file_a9ae87319480796bbd8c08d0179b538f7}{get\_hash}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ hash\_;\ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classentities_1_1_file_a27dd494240956b2be77634c074c148af}{set\_content}}(\textcolor{keyword}{const}\ std::string\&\ new\_content)\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ content\_\ =\ new\_content;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ hash\_\ =\ calculate\_hash();}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classentities_1_1_file_a4b2ae1a5b763e88dc918bba0fec5493f}{set\_hash\_manual}}(\textcolor{keyword}{const}\ std::string\&\ hash)\ \{\ hash\_\ =\ hash;\ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classentities_1_1_file_a157fb2453287c60465b9cd173e566ba0}{operator==}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{classentities_1_1_file_a1767fbaa48a1f39f0f0fa07591336724}{File}}\&\ other)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ hash\_\ ==\ other.hash\_;\ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \};}
+\DoxyCodeLine{00055\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,40 @@
+\doxysection{include/\+core/\+\+Graph\+Manager.h File Reference}
+\hypertarget{_graph_manager_8h}{}\label{_graph_manager_8h}\index{include/core/GraphManager.h@{include/core/GraphManager.h}}
+
+
+Manages the storage and lifecycle of commit objects and blob data.  
+
+
+{\ttfamily \+\#include $<$string$>$}\newline
+{\ttfamily \+\#include "{}../\+data\+\_\+structures/\+\+Hash\+Table.\+h"{}}\newline
+{\ttfamily \+\#include "{}../\+data\+\_\+structures/\+\+Doubly\+Linked\+List.\+h"{}}\newline
+{\ttfamily \+\#include "{}../\+entities/\+\+Commit.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{classcore_1_1_graph_manager}{core::\+\+Graph\+Manager}}
+\begin{DoxyCompactList}\small\item\em Centralized controller for commit lifecycle and content deduplication. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \doxymbox{\hyperlink{namespacecore}{core}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the storage and lifecycle of commit objects and blob data. 
+
+Responsible for owning dynamically allocated commits, indexing them for fast retrieval, and handling deduplicated content storage.
+
+\begin{DoxyAuthor}{Author}
+Umut Ertuğrul Daşgın 
+\end{DoxyAuthor}
+\begin{DoxyNote}{Note}
+Documentation maintained by Deniz Kayra Aydın. 
+\end{DoxyNote}
+\begin{DoxyVersion}{Version}
+1.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/12-\/25 @last\+Modified 2026-\/01-\/10 
+\end{DoxyDate}

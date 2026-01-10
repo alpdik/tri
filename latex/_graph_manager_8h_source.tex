@@ -1,0 +1,54 @@
+\doxysection{Graph\+Manager.\+h}
+\hypertarget{_graph_manager_8h_source}{}\label{_graph_manager_8h_source}\index{include/core/GraphManager.h@{include/core/GraphManager.h}}
+\doxymbox{\hyperlink{_graph_manager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_hash_table_8h}{../data\_structures/HashTable.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_doubly_linked_list_8h}{../data\_structures/DoublyLinkedList.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_commit_8h}{../entities/Commit.h}}"{}}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespacecore}{core}}\ \{}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classcore_1_1_graph_manager_a44813a1aa28f4397c4f10dcf9d73d23d}{GraphManager}}\ \{}
+\DoxyCodeLine{00030\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00031\ \ \ \ \ \doxymbox{\hyperlink{classdata__structures_1_1_hash_table}{data\_structures::HashTable<std::string,\ entities::Commit*>}}\ commit\_map\_;}
+\DoxyCodeLine{00032\ \ \ \ \ \doxymbox{\hyperlink{classdata__structures_1_1_doubly_linked_list}{data\_structures::DoublyLinkedList<entities::Commit*>}}\ managed\_commits\_;}
+\DoxyCodeLine{00033\ \ \ \ \ \doxymbox{\hyperlink{classdata__structures_1_1_hash_table}{data\_structures::HashTable<std::string,\ std::string>}}\ blob\_storage\_;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \ \ \doxymbox{\hyperlink{classcore_1_1_graph_manager_a44813a1aa28f4397c4f10dcf9d73d23d}{GraphManager}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00041\ \ \ \ \ \doxymbox{\hyperlink{classcore_1_1_graph_manager_a44b18d95fc3b49ea6e8a7e0cc492723e}{\string~GraphManager}}()\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ managed\_commits\_.begin();\ it\ !=\ managed\_commits\_.end();\ ++it)\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ *it;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classcore_1_1_graph_manager_a8e50408ee6b8fdefe5a4c36ee9d22d7f}{add\_commit}}(\doxymbox{\hyperlink{classentities_1_1_commit}{entities::Commit}}*\ commit)\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!commit)\ \textcolor{keywordflow}{return};\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ commit\_map\_.put(commit-\/>\doxymbox{\hyperlink{classentities_1_1_commit_a9010e46341002c13259e1110f3c088f4}{get\_id}}(),\ commit);}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ managed\_commits\_.push\_back(commit);}
+\DoxyCodeLine{00056\ \ \ \ \ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00063\ \ \ \ \ \doxymbox{\hyperlink{classentities_1_1_commit}{entities::Commit}}*\ \doxymbox{\hyperlink{classcore_1_1_graph_manager_a449444bb96575fa10d4b262480f26615}{get\_commit}}(\textcolor{keyword}{const}\ std::string\&\ \textcolor{keywordtype}{id})\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ commit\_map\_.contains(\textcolor{keywordtype}{id})\ ?\ commit\_map\_.get(\textcolor{keywordtype}{id})\ :\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00065\ \ \ \ \ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classcore_1_1_graph_manager_aa136799824378c785ae352eb0bddc4ea}{save\_blob}}(\textcolor{keyword}{const}\ std::string\&\ hash,\ \textcolor{keyword}{const}\ std::string\&\ content)\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!blob\_storage\_.contains(hash))\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ blob\_storage\_.put(hash,\ content);}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00077\ \ \ \ \ \}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00084\ \ \ \ \ std::string\ \doxymbox{\hyperlink{classcore_1_1_graph_manager_a7a7b489ebfa1b5161b7ad4f5bc36a0c7}{get\_blob\_content}}(\textcolor{keyword}{const}\ std::string\&\ hash)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ blob\_storage\_.contains(hash)\ ?\ blob\_storage\_.get(hash)\ :\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00086\ \ \ \ \ \}}
+\DoxyCodeLine{00087\ \};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \}\ \textcolor{comment}{//\ namespace\ core}}
+
+\end{DoxyCode}

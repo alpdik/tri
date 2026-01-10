@@ -1,0 +1,25 @@
+\doxysection{Queue.\+h}
+\hypertarget{_queue_8h_source}{}\label{_queue_8h_source}\index{include/data\_structures/Queue.h@{include/data\_structures/Queue.h}}
+\doxymbox{\hyperlink{_queue_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_doubly_linked_list_8h}{DoublyLinkedList.h}}"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespacedata__structures}{data\_structures}}\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classdata__structures_1_1_queue}{Queue}}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classdata__structures_1_1_doubly_linked_list}{DoublyLinkedList<T>}}\ dll;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classdata__structures_1_1_queue_a52d416594690df44a4bf74f4d6cc5300}{enqueue}}(\textcolor{keyword}{const}\ T\&\ item)\ \{\ dll.push\_back(item);\ \}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classdata__structures_1_1_queue_a95599cc3fe4db49e4481efcba12421ce}{dequeue}}()\ \{\ \textcolor{keywordflow}{if}\ (!\doxymbox{\hyperlink{classdata__structures_1_1_queue_ade895b764f2f92f959d8b591a72a0d30}{empty}}())\ \{\ dll.pop\_front();\ \}\ \}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ T\&\ \doxymbox{\hyperlink{classdata__structures_1_1_queue_ab2ac32e4b4ed386e193d74476075065f}{front}}()\ \{\ \textcolor{keywordflow}{return}\ dll.front();\ \}}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classdata__structures_1_1_queue_ade895b764f2f92f959d8b591a72a0d30}{empty}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ dll.empty();\ \}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \doxymbox{\hyperlink{classdata__structures_1_1_queue_a59963b2810a82817d790ece3426ff83c}{size}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ dll.size();\ \}}
+\DoxyCodeLine{00027\ \ \ \ \ \};}
+\DoxyCodeLine{00028\ \}}
+
+\end{DoxyCode}
