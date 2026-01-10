@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Doxyfile 1.16.0
+=======
+# Doxyfile 1.15.0
+>>>>>>> pr-11
 
 # This file describes the settings to be used by the documentation system
 # Doxygen (www.doxygen.org) for a project.
@@ -290,7 +294,11 @@ TAB_SIZE               = 4
 # with the commands \{ and \} for these it is advised to use the version @{ and
 # @} or use a double escape (\\{ and \\})
 
+<<<<<<< HEAD
 ALIASES += editor="\\par Editor:"
+=======
+ALIASES                =
+>>>>>>> pr-11
 
 # Set the OPTIMIZE_OUTPUT_FOR_C tag to YES if your project consists of C sources
 # only. Doxygen will then generate output that is more tailored for C. For
@@ -793,6 +801,7 @@ GENERATE_BUGLIST       = YES
 
 GENERATE_DEPRECATEDLIST= YES
 
+<<<<<<< HEAD
 # The GENERATE_REQUIREMENTS tag can be used to enable (YES) or disable (NO) the
 # requirements page. When enabled, this page is automatically created when at
 # least one comment block with a \requirement command appears in the input.
@@ -815,6 +824,8 @@ GENERATE_REQUIREMENTS  = YES
 
 REQ_TRACEABILITY_INFO  = YES
 
+=======
+>>>>>>> pr-11
 # The ENABLED_SECTIONS tag can be used to enable conditional documentation
 # sections, marked by \if <section_label> ... \endif and \cond <section_label>
 # ... \endcond blocks.

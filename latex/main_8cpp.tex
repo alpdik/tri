@@ -1,10 +1,15 @@
+<<<<<<< HEAD
 \doxysection{src/\+main.cpp File Reference}
+=======
+\doxysection{src/main.cpp File Reference}
+>>>>>>> pr-11
 \hypertarget{main_8cpp}{}\label{main_8cpp}\index{src/main.cpp@{src/main.cpp}}
 
 
 Entry point for the VCS Project. Contains Demo and Interactive modes.  
 
 
+<<<<<<< HEAD
 {\ttfamily \+\#include $<$iostream$>$}\newline
 {\ttfamily \+\#include $<$string$>$}\newline
 {\ttfamily \+\#include $<$sstream$>$}\newline
@@ -28,15 +33,48 @@ Entry point for the VCS Project. Contains Demo and Interactive modes.
 \+\#define \doxymbox{\hyperlink{main_8cpp_a79d10e672abb49ad63eeaa8aaef57c38}{BLUE}}~"{}\textbackslash{}033\+[34m"{}
 \item 
 \+\#define \doxymbox{\hyperlink{main_8cpp_ad243f93c16bc4c1d3e0a13b84421d760}{CYAN}}~"{}\textbackslash{}033\+[36m"{}
+=======
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$core/\+Repository.\+h$>$}\newline
+{\ttfamily \#include $<$tests/demo\+\_\+scenarios.\+h$>$}\newline
+{\ttfamily \#include "{}file\+\_\+viewer.\+hpp"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8cpp_a788be1e5263200d55dddebd3606ccad4}{CLEAR\+\_\+\+SCREEN}}~"{}clear"{}
+\item 
+\#define \mbox{\hyperlink{main_8cpp_ab702106cf3b3e96750b6845ded4e0299}{RESET}}~"{}\textbackslash{}033\mbox{[}0m"{}
+\item 
+\#define \mbox{\hyperlink{main_8cpp_a8d23feea868a983c8c2b661e1e16972f}{RED}}~"{}\textbackslash{}033\mbox{[}31m"{}
+\item 
+\#define \mbox{\hyperlink{main_8cpp_acfbc006ea433ad708fdee3e82996e721}{GREEN}}~"{}\textbackslash{}033\mbox{[}32m"{}
+\item 
+\#define \mbox{\hyperlink{main_8cpp_abf681265909adf3d3e8116c93c0ba179}{YELLOW}}~"{}\textbackslash{}033\mbox{[}33m"{}
+\item 
+\#define \mbox{\hyperlink{main_8cpp_a79d10e672abb49ad63eeaa8aaef57c38}{BLUE}}~"{}\textbackslash{}033\mbox{[}34m"{}
+\item 
+\#define \mbox{\hyperlink{main_8cpp_ad243f93c16bc4c1d3e0a13b84421d760}{CYAN}}~"{}\textbackslash{}033\mbox{[}36m"{}
+>>>>>>> pr-11
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
+<<<<<<< HEAD
 std::\+vector$<$ std::\+string $>$ \doxymbox{\hyperlink{main_8cpp_a2e9eaa17dcdb9801eafc712f62a29893}{split\+\_\+input}} (const std::\+string \&input)
 \item 
 void \doxymbox{\hyperlink{main_8cpp_a45ca127b1445f520c2a6d9d3f86006d0}{interactive\+\_\+shell}} ()
 \item 
 int \doxymbox{\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char \texorpdfstring{$\ast$}{*}argv\+[$\,$]\+)
+=======
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{main_8cpp_a2e9eaa17dcdb9801eafc712f62a29893}{split\+\_\+input}} (const std\+::string \&input)
+\item 
+void \mbox{\hyperlink{main_8cpp_a45ca127b1445f520c2a6d9d3f86006d0}{interactive\+\_\+shell}} ()
+\item 
+int \mbox{\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+>>>>>>> pr-11
 \end{DoxyCompactItemize}
 
 
@@ -61,43 +99,71 @@ Umut Ertuğrul Daşgın @co-\/conturbuted Alp Dikmen
 \index{BLUE@{BLUE}!main.cpp@{main.cpp}}
 \doxysubsubsection{\texorpdfstring{BLUE}{BLUE}}
 {\footnotesize\ttfamily \label{main_8cpp_a79d10e672abb49ad63eeaa8aaef57c38} 
+<<<<<<< HEAD
 \+\#define BLUE~"{}\textbackslash{}033\+[34m"{}}
+=======
+\#define BLUE~"{}\textbackslash{}033\mbox{[}34m"{}}
+>>>>>>> pr-11
 
 \Hypertarget{main_8cpp_a788be1e5263200d55dddebd3606ccad4}\index{main.cpp@{main.cpp}!CLEAR\_SCREEN@{CLEAR\_SCREEN}}
 \index{CLEAR\_SCREEN@{CLEAR\_SCREEN}!main.cpp@{main.cpp}}
 \doxysubsubsection{\texorpdfstring{CLEAR\_SCREEN}{CLEAR\_SCREEN}}
 {\footnotesize\ttfamily \label{main_8cpp_a788be1e5263200d55dddebd3606ccad4} 
+<<<<<<< HEAD
 \+\#define CLEAR\+\_\+\+SCREEN~"{}clear"{}}
+=======
+\#define CLEAR\+\_\+\+SCREEN~"{}clear"{}}
+>>>>>>> pr-11
 
 \Hypertarget{main_8cpp_ad243f93c16bc4c1d3e0a13b84421d760}\index{main.cpp@{main.cpp}!CYAN@{CYAN}}
 \index{CYAN@{CYAN}!main.cpp@{main.cpp}}
 \doxysubsubsection{\texorpdfstring{CYAN}{CYAN}}
 {\footnotesize\ttfamily \label{main_8cpp_ad243f93c16bc4c1d3e0a13b84421d760} 
+<<<<<<< HEAD
 \+\#define CYAN~"{}\textbackslash{}033\+[36m"{}}
+=======
+\#define CYAN~"{}\textbackslash{}033\mbox{[}36m"{}}
+>>>>>>> pr-11
 
 \Hypertarget{main_8cpp_acfbc006ea433ad708fdee3e82996e721}\index{main.cpp@{main.cpp}!GREEN@{GREEN}}
 \index{GREEN@{GREEN}!main.cpp@{main.cpp}}
 \doxysubsubsection{\texorpdfstring{GREEN}{GREEN}}
 {\footnotesize\ttfamily \label{main_8cpp_acfbc006ea433ad708fdee3e82996e721} 
+<<<<<<< HEAD
 \+\#define GREEN~"{}\textbackslash{}033\+[32m"{}}
+=======
+\#define GREEN~"{}\textbackslash{}033\mbox{[}32m"{}}
+>>>>>>> pr-11
 
 \Hypertarget{main_8cpp_a8d23feea868a983c8c2b661e1e16972f}\index{main.cpp@{main.cpp}!RED@{RED}}
 \index{RED@{RED}!main.cpp@{main.cpp}}
 \doxysubsubsection{\texorpdfstring{RED}{RED}}
 {\footnotesize\ttfamily \label{main_8cpp_a8d23feea868a983c8c2b661e1e16972f} 
+<<<<<<< HEAD
 \+\#define RED~"{}\textbackslash{}033\+[31m"{}}
+=======
+\#define RED~"{}\textbackslash{}033\mbox{[}31m"{}}
+>>>>>>> pr-11
 
 \Hypertarget{main_8cpp_ab702106cf3b3e96750b6845ded4e0299}\index{main.cpp@{main.cpp}!RESET@{RESET}}
 \index{RESET@{RESET}!main.cpp@{main.cpp}}
 \doxysubsubsection{\texorpdfstring{RESET}{RESET}}
 {\footnotesize\ttfamily \label{main_8cpp_ab702106cf3b3e96750b6845ded4e0299} 
+<<<<<<< HEAD
 \+\#define RESET~"{}\textbackslash{}033\+[0m"{}}
+=======
+\#define RESET~"{}\textbackslash{}033\mbox{[}0m"{}}
+>>>>>>> pr-11
 
 \Hypertarget{main_8cpp_abf681265909adf3d3e8116c93c0ba179}\index{main.cpp@{main.cpp}!YELLOW@{YELLOW}}
 \index{YELLOW@{YELLOW}!main.cpp@{main.cpp}}
 \doxysubsubsection{\texorpdfstring{YELLOW}{YELLOW}}
 {\footnotesize\ttfamily \label{main_8cpp_abf681265909adf3d3e8116c93c0ba179} 
+<<<<<<< HEAD
 \+\#define YELLOW~"{}\textbackslash{}033\+[33m"{}}
+=======
+\#define YELLOW~"{}\textbackslash{}033\mbox{[}33m"{}}
+>>>>>>> pr-11
 
 
 
@@ -114,11 +180,19 @@ void interactive\+\_\+shell (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})
 \index{main@{main}!main.cpp@{main.cpp}}
 \doxysubsubsection{\texorpdfstring{main()}{main()}}
 {\footnotesize\ttfamily \label{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97} 
+<<<<<<< HEAD
 int main (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{argv}{\+[$\,$]\+}\end{DoxyParamCaption})}
+=======
+int main (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{argv}{\mbox{[}$\,$\mbox{]}}\end{DoxyParamCaption})}
+>>>>>>> pr-11
 
 \Hypertarget{main_8cpp_a2e9eaa17dcdb9801eafc712f62a29893}\index{main.cpp@{main.cpp}!split\_input@{split\_input}}
 \index{split\_input@{split\_input}!main.cpp@{main.cpp}}
 \doxysubsubsection{\texorpdfstring{split\_input()}{split\_input()}}
 {\footnotesize\ttfamily \label{main_8cpp_a2e9eaa17dcdb9801eafc712f62a29893} 
+<<<<<<< HEAD
 std::\+vector$<$ std::\+string $>$ split\+\_\+input (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{input}{}\end{DoxyParamCaption})}
+=======
+std\+::vector$<$ std\+::string $>$ split\+\_\+input (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{input}{}\end{DoxyParamCaption})}
+>>>>>>> pr-11
 

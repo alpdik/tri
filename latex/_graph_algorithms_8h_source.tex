@@ -1,5 +1,6 @@
 \doxysection{Graph\+Algorithms.\+h}
 \hypertarget{_graph_algorithms_8h_source}{}\label{_graph_algorithms_8h_source}\index{include/core/GraphAlgorithms.h@{include/core/GraphAlgorithms.h}}
+<<<<<<< HEAD
 \doxymbox{\hyperlink{_graph_algorithms_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ }
@@ -120,5 +121,134 @@
 \DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00126\ \ \ \ \ \};}
 \DoxyCodeLine{00127\ \}}
+=======
+\mbox{\hyperlink{_graph_algorithms_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_stack_8h}{../data\_structures/Stack.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_queue_8h}{../data\_structures/Queue.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_hash_table_8h}{../data\_structures/HashTable.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_commit_8h}{../entities/Commit.h}}"{}}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacecore}{core}}\ \{}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcore_1_1_graph_algorithms_add461d2766719232e0daf3e08b5165de}{GraphAlgorithms}}\ \{}
+\DoxyCodeLine{00029\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{classcore_1_1_graph_algorithms_add461d2766719232e0daf3e08b5165de}{GraphAlgorithms}}()\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classdata__structures_1_1_stack}{data\_structures::Stack<entities::Commit*>}}}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{classcore_1_1_graph_algorithms_a3329e90d30f2ba84b978e1b7b6f6bf7d}{get\_history\_dfs}}(\mbox{\hyperlink{classentities_1_1_commit}{entities::Commit}}*\ start)\ \{}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdata__structures_1_1_stack}{data\_structures::Stack<entities::Commit*>}}\ history;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!start)\ \textcolor{keywordflow}{return}\ history;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdata__structures_1_1_hash_table}{data\_structures::HashTable<std::string,\ bool>}}\ visited;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdata__structures_1_1_stack}{data\_structures::Stack<entities::Commit*>}}\ st;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ st.\mbox{\hyperlink{classdata__structures_1_1_stack_ae5b80d105e95b0d73f7be027dfabbe56}{push}}(start);}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ visited.\mbox{\hyperlink{classdata__structures_1_1_hash_table_a8777b7d985f49991d32b8f60dd670591}{put}}(start-\/>\mbox{\hyperlink{classentities_1_1_commit_a9010e46341002c13259e1110f3c088f4}{get\_id}}(),\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!st.\mbox{\hyperlink{classdata__structures_1_1_stack_a04e2e7cb58b2de6d3a15053bfaaf6080}{empty}}())\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classentities_1_1_commit}{entities::Commit}}*\ curr\ =\ st.\mbox{\hyperlink{classdata__structures_1_1_stack_afbbe79ea71c575e11feb9aa597ceded0}{top}}();}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ st.\mbox{\hyperlink{classdata__structures_1_1_stack_a3192bba1ef24bf7a54d75cf1087ae49e}{pop}}();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ history.\mbox{\hyperlink{classdata__structures_1_1_stack_ae5b80d105e95b0d73f7be027dfabbe56}{push}}(curr);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (curr-\/>\mbox{\hyperlink{classentities_1_1_commit_adf8d8d39c62925f1b6c53bf8a64e3408}{get\_parent1}}())\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ p1\_id\ =\ curr-\/>\mbox{\hyperlink{classentities_1_1_commit_adf8d8d39c62925f1b6c53bf8a64e3408}{get\_parent1}}()-\/>\mbox{\hyperlink{classentities_1_1_commit_a9010e46341002c13259e1110f3c088f4}{get\_id}}();}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!visited.\mbox{\hyperlink{classdata__structures_1_1_hash_table_ab382d24edb1ca92fc76263e7e7390d41}{contains}}(p1\_id))\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ st.\mbox{\hyperlink{classdata__structures_1_1_stack_ae5b80d105e95b0d73f7be027dfabbe56}{push}}(curr-\/>\mbox{\hyperlink{classentities_1_1_commit_adf8d8d39c62925f1b6c53bf8a64e3408}{get\_parent1}}());}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ visited.\mbox{\hyperlink{classdata__structures_1_1_hash_table_a8777b7d985f49991d32b8f60dd670591}{put}}(p1\_id,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (curr-\/>\mbox{\hyperlink{classentities_1_1_commit_a3ca3732810681720fd6dff05b54d1764}{get\_parent2}}())\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ p2\_id\ =\ curr-\/>\mbox{\hyperlink{classentities_1_1_commit_a3ca3732810681720fd6dff05b54d1764}{get\_parent2}}()-\/>\mbox{\hyperlink{classentities_1_1_commit_a9010e46341002c13259e1110f3c088f4}{get\_id}}();}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!visited.\mbox{\hyperlink{classdata__structures_1_1_hash_table_ab382d24edb1ca92fc76263e7e7390d41}{contains}}(p2\_id))\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ st.\mbox{\hyperlink{classdata__structures_1_1_stack_ae5b80d105e95b0d73f7be027dfabbe56}{push}}(curr-\/>\mbox{\hyperlink{classentities_1_1_commit_a3ca3732810681720fd6dff05b54d1764}{get\_parent2}}());}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ visited.\mbox{\hyperlink{classdata__structures_1_1_hash_table_a8777b7d985f49991d32b8f60dd670591}{put}}(p2\_id,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ history;}
+\DoxyCodeLine{00074\ \ \ \ \ \}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classentities_1_1_commit}{entities::Commit}}*}
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{classcore_1_1_graph_algorithms_a61c065b6ae8ff486d4937c262f68620e}{find\_merge\_base}}(\mbox{\hyperlink{classentities_1_1_commit}{entities::Commit}}*\ c1,\ \mbox{\hyperlink{classentities_1_1_commit}{entities::Commit}}*\ c2)\ \{}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!c1\ ||\ !c2)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (c1-\/>\mbox{\hyperlink{classentities_1_1_commit_a9010e46341002c13259e1110f3c088f4}{get\_id}}()\ ==\ c2-\/>\mbox{\hyperlink{classentities_1_1_commit_a9010e46341002c13259e1110f3c088f4}{get\_id}}())\ \textcolor{keywordflow}{return}\ c1;}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdata__structures_1_1_hash_table}{data\_structures::HashTable<std::string,\ bool>}}\ ancestors1;}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdata__structures_1_1_queue}{data\_structures::Queue<entities::Commit*>}}\ q;}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ q.\mbox{\hyperlink{classdata__structures_1_1_queue_a52d416594690df44a4bf74f4d6cc5300}{enqueue}}(c1);}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ ancestors1.\mbox{\hyperlink{classdata__structures_1_1_hash_table_a8777b7d985f49991d32b8f60dd670591}{put}}(c1-\/>\mbox{\hyperlink{classentities_1_1_commit_a9010e46341002c13259e1110f3c088f4}{get\_id}}(),\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!q.\mbox{\hyperlink{classdata__structures_1_1_queue_ade895b764f2f92f959d8b591a72a0d30}{empty}}())\ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classentities_1_1_commit}{entities::Commit}}*\ curr\ =\ q.\mbox{\hyperlink{classdata__structures_1_1_queue_ab2ac32e4b4ed386e193d74476075065f}{front}}();}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ q.\mbox{\hyperlink{classdata__structures_1_1_queue_a95599cc3fe4db49e4481efcba12421ce}{dequeue}}();}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (curr-\/>\mbox{\hyperlink{classentities_1_1_commit_adf8d8d39c62925f1b6c53bf8a64e3408}{get\_parent1}}())\ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ p1\ =\ curr-\/>\mbox{\hyperlink{classentities_1_1_commit_adf8d8d39c62925f1b6c53bf8a64e3408}{get\_parent1}}()-\/>\mbox{\hyperlink{classentities_1_1_commit_a9010e46341002c13259e1110f3c088f4}{get\_id}}();}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!ancestors1.\mbox{\hyperlink{classdata__structures_1_1_hash_table_ab382d24edb1ca92fc76263e7e7390d41}{contains}}(p1))\ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ancestors1.\mbox{\hyperlink{classdata__structures_1_1_hash_table_a8777b7d985f49991d32b8f60dd670591}{put}}(p1,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ q.\mbox{\hyperlink{classdata__structures_1_1_queue_a52d416594690df44a4bf74f4d6cc5300}{enqueue}}(curr-\/>\mbox{\hyperlink{classentities_1_1_commit_adf8d8d39c62925f1b6c53bf8a64e3408}{get\_parent1}}());}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (curr-\/>\mbox{\hyperlink{classentities_1_1_commit_a3ca3732810681720fd6dff05b54d1764}{get\_parent2}}())\ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ p2\ =\ curr-\/>\mbox{\hyperlink{classentities_1_1_commit_a3ca3732810681720fd6dff05b54d1764}{get\_parent2}}()-\/>\mbox{\hyperlink{classentities_1_1_commit_a9010e46341002c13259e1110f3c088f4}{get\_id}}();}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!ancestors1.\mbox{\hyperlink{classdata__structures_1_1_hash_table_ab382d24edb1ca92fc76263e7e7390d41}{contains}}(p2))\ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ancestors1.\mbox{\hyperlink{classdata__structures_1_1_hash_table_a8777b7d985f49991d32b8f60dd670591}{put}}(p2,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ q.\mbox{\hyperlink{classdata__structures_1_1_queue_a52d416594690df44a4bf74f4d6cc5300}{enqueue}}(curr-\/>\mbox{\hyperlink{classentities_1_1_commit_a3ca3732810681720fd6dff05b54d1764}{get\_parent2}}());}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdata__structures_1_1_queue}{data\_structures::Queue<entities::Commit*>}}\ q2;}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdata__structures_1_1_hash_table}{data\_structures::HashTable<std::string,\ bool>}}\ visited2;}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ q2.\mbox{\hyperlink{classdata__structures_1_1_queue_a52d416594690df44a4bf74f4d6cc5300}{enqueue}}(c2);}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ visited2.\mbox{\hyperlink{classdata__structures_1_1_hash_table_a8777b7d985f49991d32b8f60dd670591}{put}}(c2-\/>\mbox{\hyperlink{classentities_1_1_commit_a9010e46341002c13259e1110f3c088f4}{get\_id}}(),\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!q2.\mbox{\hyperlink{classdata__structures_1_1_queue_ade895b764f2f92f959d8b591a72a0d30}{empty}}())\ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classentities_1_1_commit}{entities::Commit}}*\ curr\ =\ q2.\mbox{\hyperlink{classdata__structures_1_1_queue_ab2ac32e4b4ed386e193d74476075065f}{front}}();}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ q2.\mbox{\hyperlink{classdata__structures_1_1_queue_a95599cc3fe4db49e4481efcba12421ce}{dequeue}}();}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ancestors1.\mbox{\hyperlink{classdata__structures_1_1_hash_table_ab382d24edb1ca92fc76263e7e7390d41}{contains}}(curr-\/>\mbox{\hyperlink{classentities_1_1_commit_a9010e46341002c13259e1110f3c088f4}{get\_id}}()))\ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ curr;}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (curr-\/>\mbox{\hyperlink{classentities_1_1_commit_adf8d8d39c62925f1b6c53bf8a64e3408}{get\_parent1}}())\ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ p1\ =\ curr-\/>\mbox{\hyperlink{classentities_1_1_commit_adf8d8d39c62925f1b6c53bf8a64e3408}{get\_parent1}}()-\/>\mbox{\hyperlink{classentities_1_1_commit_a9010e46341002c13259e1110f3c088f4}{get\_id}}();}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!visited2.\mbox{\hyperlink{classdata__structures_1_1_hash_table_ab382d24edb1ca92fc76263e7e7390d41}{contains}}(p1))\ \{}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ visited2.\mbox{\hyperlink{classdata__structures_1_1_hash_table_a8777b7d985f49991d32b8f60dd670591}{put}}(p1,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ q2.\mbox{\hyperlink{classdata__structures_1_1_queue_a52d416594690df44a4bf74f4d6cc5300}{enqueue}}(curr-\/>\mbox{\hyperlink{classentities_1_1_commit_adf8d8d39c62925f1b6c53bf8a64e3408}{get\_parent1}}());}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (curr-\/>\mbox{\hyperlink{classentities_1_1_commit_a3ca3732810681720fd6dff05b54d1764}{get\_parent2}}())\ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ p2\ =\ curr-\/>\mbox{\hyperlink{classentities_1_1_commit_a3ca3732810681720fd6dff05b54d1764}{get\_parent2}}()-\/>\mbox{\hyperlink{classentities_1_1_commit_a9010e46341002c13259e1110f3c088f4}{get\_id}}();}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!visited2.\mbox{\hyperlink{classdata__structures_1_1_hash_table_ab382d24edb1ca92fc76263e7e7390d41}{contains}}(p2))\ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ visited2.\mbox{\hyperlink{classdata__structures_1_1_hash_table_a8777b7d985f49991d32b8f60dd670591}{put}}(p2,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ q2.\mbox{\hyperlink{classdata__structures_1_1_queue_a52d416594690df44a4bf74f4d6cc5300}{enqueue}}(curr-\/>\mbox{\hyperlink{classentities_1_1_commit_a3ca3732810681720fd6dff05b54d1764}{get\_parent2}}());}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00147\ \ \ \ \ \}}
+\DoxyCodeLine{00148\ \};}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \}\ \textcolor{comment}{//\ namespace\ core}}
+>>>>>>> pr-11
 
 \end{DoxyCode}

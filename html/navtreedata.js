@@ -71,7 +71,11 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_branch_8h.html",
+<<<<<<< HEAD
 "classentities_1_1_branch.html#a01224cc80ff638ef532553b610503544"
+=======
+"classentities_1_1_branch.html"
+>>>>>>> pr-11
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

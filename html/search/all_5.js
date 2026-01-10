@@ -8,7 +8,11 @@ var searchData=
   ['commit_5',['Commit',['../classentities_1_1_commit.html',1,'entities::Commit'],['../classentities_1_1_commit.html#ae2c0c5ce9ed337db82a8738f6d521973',1,'entities::Commit::Commit()']]],
   ['commit_6',['commit',['../classcore_1_1_repository.html#ac91e2083d479e78a62e8b1b5810f7475',1,'core::Repository']]],
   ['commit_2eh_7',['Commit.h',['../_commit_8h.html',1,'']]],
+<<<<<<< HEAD
   ['contains_8',['contains',['../classdata__structures_1_1_hash_table.html#ab382d24edb1ca92fc76263e7e7390d41',1,'data_structures::HashTable']]],
+=======
+  ['contains_8',['contains',['../classcore_1_1_graph_manager.html#ab3db37cf79682f2d3f4be9d30ad1d4fe',1,'core::GraphManager::contains()'],['../classdata__structures_1_1_hash_table.html#ab382d24edb1ca92fc76263e7e7390d41',1,'data_structures::HashTable::contains()']]],
+>>>>>>> pr-11
   ['contributions_9',['Contributions',['../md_project__report.html#autotoc_md3',1,'']]],
   ['core_10',['core',['../namespacecore.html',1,'']]],
   ['create_5fbranch_11',['create_branch',['../classcore_1_1_reference_manager.html#a93e001fea18f34809ab8a485676fbd5b',1,'core::ReferenceManager::create_branch()'],['../classcore_1_1_repository.html#ac0a0bb38c4b0e136a89f6c997685df5e',1,'core::Repository::create_branch()']]],

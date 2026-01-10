@@ -1,5 +1,10 @@
 var NAVTREEINDEX1 =
 {
+<<<<<<< HEAD
+=======
+"classentities_1_1_branch.html":[4,0,2,0],
+"classentities_1_1_branch.html#a01224cc80ff638ef532553b610503544":[3,0,2,0,1],
+>>>>>>> pr-11
 "classentities_1_1_branch.html#a01224cc80ff638ef532553b610503544":[4,0,2,0,1],
 "classentities_1_1_branch.html#a610ac0c03d5dccb13f07776ea9864678":[3,0,2,0,2],
 "classentities_1_1_branch.html#a610ac0c03d5dccb13f07776ea9864678":[4,0,2,0,2],

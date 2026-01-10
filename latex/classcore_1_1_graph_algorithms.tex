@@ -1,23 +1,58 @@
+<<<<<<< HEAD
 \doxysection{core::\+Graph\+Algorithms Class Reference}
 \hypertarget{classcore_1_1_graph_algorithms}{}\label{classcore_1_1_graph_algorithms}\index{core::GraphAlgorithms@{core::GraphAlgorithms}}
 
 
 {\ttfamily \+\#include $<$Graph\+Algorithms.\+h$>$}
+=======
+\doxysection{core\+::Graph\+Algorithms Class Reference}
+\hypertarget{classcore_1_1_graph_algorithms}{}\label{classcore_1_1_graph_algorithms}\index{core::GraphAlgorithms@{core::GraphAlgorithms}}
+
+
+Static utility algorithms for commit graphs.  
+
+
+
+
+{\ttfamily \#include $<$Graph\+Algorithms.\+h$>$}
+>>>>>>> pr-11
 
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+<<<<<<< HEAD
 \doxymbox{\hyperlink{classcore_1_1_graph_algorithms_add461d2766719232e0daf3e08b5165de}{Graph\+Algorithms}} ()=delete
+=======
+\mbox{\hyperlink{classcore_1_1_graph_algorithms_add461d2766719232e0daf3e08b5165de}{Graph\+Algorithms}} ()=delete
+>>>>>>> pr-11
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+<<<<<<< HEAD
 static \doxymbox{\hyperlink{classdata__structures_1_1_stack}{data\+\_\+structures::\+\+Stack}}$<$ \doxymbox{\hyperlink{classentities_1_1_commit}{entities::\+\+Commit}} \texorpdfstring{$\ast$}{*} $>$ \doxymbox{\hyperlink{classcore_1_1_graph_algorithms_a3329e90d30f2ba84b978e1b7b6f6bf7d}{get\+\_\+history\+\_\+dfs}} (\doxymbox{\hyperlink{classentities_1_1_commit}{entities::\+\+Commit}} \texorpdfstring{$\ast$}{*}start)
 \item 
 static \doxymbox{\hyperlink{classentities_1_1_commit}{entities::\+\+Commit}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classcore_1_1_graph_algorithms_a61c065b6ae8ff486d4937c262f68620e}{find\+\_\+merge\+\_\+base}} (\doxymbox{\hyperlink{classentities_1_1_commit}{entities::\+\+Commit}} \texorpdfstring{$\ast$}{*}c1, \doxymbox{\hyperlink{classentities_1_1_commit}{entities::\+\+Commit}} \texorpdfstring{$\ast$}{*}c2)
 \end{DoxyCompactItemize}
 
 
+=======
+static \mbox{\hyperlink{classdata__structures_1_1_stack}{data\+\_\+structures\+::\+Stack}}$<$ \mbox{\hyperlink{classentities_1_1_commit}{entities\+::\+Commit}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classcore_1_1_graph_algorithms_a3329e90d30f2ba84b978e1b7b6f6bf7d}{get\+\_\+history\+\_\+dfs}} (\mbox{\hyperlink{classentities_1_1_commit}{entities\+::\+Commit}} \texorpdfstring{$\ast$}{*}start)
+\begin{DoxyCompactList}\small\item\em Performs depth-\/first traversal of commit history. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classentities_1_1_commit}{entities\+::\+Commit}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classcore_1_1_graph_algorithms_a61c065b6ae8ff486d4937c262f68620e}{find\+\_\+merge\+\_\+base}} (\mbox{\hyperlink{classentities_1_1_commit}{entities\+::\+Commit}} \texorpdfstring{$\ast$}{*}c1, \mbox{\hyperlink{classentities_1_1_commit}{entities\+::\+Commit}} \texorpdfstring{$\ast$}{*}c2)
+\begin{DoxyCompactList}\small\item\em Finds the nearest common ancestor of two commits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Static utility algorithms for commit graphs. 
+
+
+\begin{DoxyItemize}
+\item Operates on commit DAG structures
+\item Contains no state and owns no memory 
+\end{DoxyItemize}
+
+>>>>>>> pr-11
 \label{doc-constructors}
 \Hypertarget{classcore_1_1_graph_algorithms_doc-constructors}
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -25,7 +60,11 @@ static \doxymbox{\hyperlink{classentities_1_1_commit}{entities::\+\+Commit}} \te
 \index{GraphAlgorithms@{GraphAlgorithms}!core::GraphAlgorithms@{core::GraphAlgorithms}}
 \doxysubsubsection{\texorpdfstring{GraphAlgorithms()}{GraphAlgorithms()}}
 {\footnotesize\ttfamily \label{classcore_1_1_graph_algorithms_add461d2766719232e0daf3e08b5165de} 
+<<<<<<< HEAD
 core::\+\+Graph\+Algorithms::\+\+Graph\+Algorithms (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+=======
+core\+::\+Graph\+Algorithms\+::\+Graph\+Algorithms (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+>>>>>>> pr-11
 
 
 
@@ -36,12 +75,32 @@ core::\+\+Graph\+Algorithms::\+\+Graph\+Algorithms (\begin{DoxyParamCaption}{}{}
 \index{find\_merge\_base@{find\_merge\_base}!core::GraphAlgorithms@{core::GraphAlgorithms}}
 \doxysubsubsection{\texorpdfstring{find\_merge\_base()}{find\_merge\_base()}}
 {\footnotesize\ttfamily \label{classcore_1_1_graph_algorithms_a61c065b6ae8ff486d4937c262f68620e} 
+<<<<<<< HEAD
 \doxymbox{\hyperlink{classentities_1_1_commit}{entities::\+\+Commit}} \texorpdfstring{$\ast$}{*} core::\+\+Graph\+Algorithms::\+find\+\_\+merge\+\_\+base (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classentities_1_1_commit}{entities::\+\+Commit}} \texorpdfstring{$\ast$}{*}}]{c1}{, }\item[{\doxymbox{\hyperlink{classentities_1_1_commit}{entities::\+\+Commit}} \texorpdfstring{$\ast$}{*}}]{c2}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
+=======
+\mbox{\hyperlink{classentities_1_1_commit}{entities\+::\+Commit}} \texorpdfstring{$\ast$}{*} core\+::\+Graph\+Algorithms\+::find\+\_\+merge\+\_\+base (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classentities_1_1_commit}{entities\+::\+Commit}} \texorpdfstring{$\ast$}{*}}]{c1}{, }\item[{\mbox{\hyperlink{classentities_1_1_commit}{entities\+::\+Commit}} \texorpdfstring{$\ast$}{*}}]{c2}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Finds the nearest common ancestor of two commits. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c1} & First commit. \\
+\hline
+{\em c2} & Second commit. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Merge base commit or nullptr. 
+\end{DoxyReturn}
+>>>>>>> pr-11
 \Hypertarget{classcore_1_1_graph_algorithms_a3329e90d30f2ba84b978e1b7b6f6bf7d}\index{core::GraphAlgorithms@{core::GraphAlgorithms}!get\_history\_dfs@{get\_history\_dfs}}
 \index{get\_history\_dfs@{get\_history\_dfs}!core::GraphAlgorithms@{core::GraphAlgorithms}}
 \doxysubsubsection{\texorpdfstring{get\_history\_dfs()}{get\_history\_dfs()}}
 {\footnotesize\ttfamily \label{classcore_1_1_graph_algorithms_a3329e90d30f2ba84b978e1b7b6f6bf7d} 
+<<<<<<< HEAD
 \doxymbox{\hyperlink{classdata__structures_1_1_stack}{data\+\_\+structures::\+\+Stack}}$<$ \doxymbox{\hyperlink{classentities_1_1_commit}{entities::\+\+Commit}} \texorpdfstring{$\ast$}{*} $>$ core::\+\+Graph\+Algorithms::\+get\+\_\+history\+\_\+dfs (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classentities_1_1_commit}{entities::\+\+Commit}} \texorpdfstring{$\ast$}{*}}]{start}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 
@@ -49,3 +108,24 @@ core::\+\+Graph\+Algorithms::\+\+Graph\+Algorithms (\begin{DoxyParamCaption}{}{}
 The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
 \item 
 include/\+core/\+\doxymbox{\hyperlink{_graph_algorithms_8h}{Graph\+Algorithms.\+h}}\end{DoxyCompactItemize}
+=======
+\mbox{\hyperlink{classdata__structures_1_1_stack}{data\+\_\+structures\+::\+Stack}}$<$ \mbox{\hyperlink{classentities_1_1_commit}{entities\+::\+Commit}} \texorpdfstring{$\ast$}{*} $>$ core\+::\+Graph\+Algorithms\+::get\+\_\+history\+\_\+dfs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classentities_1_1_commit}{entities\+::\+Commit}} \texorpdfstring{$\ast$}{*}}]{start}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Performs depth-\/first traversal of commit history. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & Starting commit. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Stack of visited commits. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/core/\mbox{\hyperlink{_graph_algorithms_8h}{Graph\+Algorithms.\+h}}\end{DoxyCompactItemize}
+>>>>>>> pr-11

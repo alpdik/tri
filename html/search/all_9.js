@@ -3,7 +3,11 @@ var searchData=
   ['get_0',['get',['../classdata__structures_1_1_hash_table.html#a70e0837850260c0db83c084676cdfeca',1,'data_structures::HashTable::get(const K &amp;key)'],['../classdata__structures_1_1_hash_table.html#a72bb56a7c1661bcf8adf3053d3b3748e',1,'data_structures::HashTable::get(const K &amp;key) const']]],
   ['get_5fall_5fbranches_1',['get_all_branches',['../classcore_1_1_reference_manager.html#a01c4249c4763d078a54a15db7ff4a20d',1,'core::ReferenceManager']]],
   ['get_5fauthor_2',['get_author',['../classentities_1_1_commit.html#ae9df9b356b2a981a978cf2132c752e34',1,'entities::Commit']]],
+<<<<<<< HEAD
   ['get_5fblob_5fcontent_3',['get_blob_content',['../classcore_1_1_graph_manager.html#a7a7b489ebfa1b5161b7ad4f5bc36a0c7',1,'core::GraphManager']]],
+=======
+  ['get_5fblob_5fcontent_3',['get_blob_content',['../classcore_1_1_graph_manager.html#a19147bcce2799c3c06434812434e1a3a',1,'core::GraphManager']]],
+>>>>>>> pr-11
   ['get_5fbranch_4',['get_branch',['../classcore_1_1_reference_manager.html#a8bc633d5e4e1027c1c270e8c1a2852bc',1,'core::ReferenceManager']]],
   ['get_5fcommit_5',['get_commit',['../classcore_1_1_graph_manager.html#a449444bb96575fa10d4b262480f26615',1,'core::GraphManager']]],
   ['get_5fcontent_6',['get_content',['../classentities_1_1_file.html#a6519c141a45695f60a080823860fc1bc',1,'entities::File']]],

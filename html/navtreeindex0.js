@@ -37,6 +37,7 @@ var NAVTREEINDEX0 =
 "classcore_1_1_graph_algorithms.html#add461d2766719232e0daf3e08b5165de":[4,0,0,0,0],
 "classcore_1_1_graph_manager.html":[3,0,0,1],
 "classcore_1_1_graph_manager.html":[4,0,0,1],
+<<<<<<< HEAD
 "classcore_1_1_graph_manager.html#a44813a1aa28f4397c4f10dcf9d73d23d":[3,0,0,1,0],
 "classcore_1_1_graph_manager.html#a44813a1aa28f4397c4f10dcf9d73d23d":[4,0,0,1,0],
 "classcore_1_1_graph_manager.html#a449444bb96575fa10d4b262480f26615":[3,0,0,1,4],
@@ -49,6 +50,22 @@ var NAVTREEINDEX0 =
 "classcore_1_1_graph_manager.html#a8e50408ee6b8fdefe5a4c36ee9d22d7f":[4,0,0,1,2],
 "classcore_1_1_graph_manager.html#aa136799824378c785ae352eb0bddc4ea":[3,0,0,1,5],
 "classcore_1_1_graph_manager.html#aa136799824378c785ae352eb0bddc4ea":[4,0,0,1,5],
+=======
+"classcore_1_1_graph_manager.html#a19147bcce2799c3c06434812434e1a3a":[3,0,0,1,4],
+"classcore_1_1_graph_manager.html#a19147bcce2799c3c06434812434e1a3a":[4,0,0,1,4],
+"classcore_1_1_graph_manager.html#a44813a1aa28f4397c4f10dcf9d73d23d":[3,0,0,1,0],
+"classcore_1_1_graph_manager.html#a44813a1aa28f4397c4f10dcf9d73d23d":[4,0,0,1,0],
+"classcore_1_1_graph_manager.html#a449444bb96575fa10d4b262480f26615":[3,0,0,1,5],
+"classcore_1_1_graph_manager.html#a449444bb96575fa10d4b262480f26615":[4,0,0,1,5],
+"classcore_1_1_graph_manager.html#a44b18d95fc3b49ea6e8a7e0cc492723e":[3,0,0,1,1],
+"classcore_1_1_graph_manager.html#a44b18d95fc3b49ea6e8a7e0cc492723e":[4,0,0,1,1],
+"classcore_1_1_graph_manager.html#a8e50408ee6b8fdefe5a4c36ee9d22d7f":[3,0,0,1,2],
+"classcore_1_1_graph_manager.html#a8e50408ee6b8fdefe5a4c36ee9d22d7f":[4,0,0,1,2],
+"classcore_1_1_graph_manager.html#aa136799824378c785ae352eb0bddc4ea":[3,0,0,1,6],
+"classcore_1_1_graph_manager.html#aa136799824378c785ae352eb0bddc4ea":[4,0,0,1,6],
+"classcore_1_1_graph_manager.html#ab3db37cf79682f2d3f4be9d30ad1d4fe":[3,0,0,1,3],
+"classcore_1_1_graph_manager.html#ab3db37cf79682f2d3f4be9d30ad1d4fe":[4,0,0,1,3],
+>>>>>>> pr-11
 "classcore_1_1_merge_engine.html":[3,0,0,2],
 "classcore_1_1_merge_engine.html":[4,0,0,2],
 "classcore_1_1_merge_engine.html#a001f097c7c23f8a38b40bed7d6c3cc80":[3,0,0,2,1],
@@ -247,7 +264,11 @@ var NAVTREEINDEX0 =
 "classdata__structures_1_1_stack.html#ae5b80d105e95b0d73f7be027dfabbe56":[4,0,1,3,2],
 "classdata__structures_1_1_stack.html#afbbe79ea71c575e11feb9aa597ceded0":[3,0,1,3,4],
 "classdata__structures_1_1_stack.html#afbbe79ea71c575e11feb9aa597ceded0":[4,0,1,3,4],
+<<<<<<< HEAD
 "classentities_1_1_branch.html":[3,0,2,0],
 "classentities_1_1_branch.html":[4,0,2,0],
 "classentities_1_1_branch.html#a01224cc80ff638ef532553b610503544":[3,0,2,0,1]
+=======
+"classentities_1_1_branch.html":[3,0,2,0]
+>>>>>>> pr-11
 };

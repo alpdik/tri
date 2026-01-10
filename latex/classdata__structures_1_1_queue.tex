@@ -1,12 +1,26 @@
+<<<<<<< HEAD
 \doxysection{data\+\_\+structures::\+Queue\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
 \hypertarget{classdata__structures_1_1_queue}{}\label{classdata__structures_1_1_queue}\index{data\_structures::Queue$<$ T $>$@{data\_structures::Queue$<$ T $>$}}
 
 
 {\ttfamily \+\#include $<$Queue.\+h$>$}
+=======
+\doxysection{data\+\_\+structures\+::Queue\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classdata__structures_1_1_queue}{}\label{classdata__structures_1_1_queue}\index{data\_structures::Queue$<$ T $>$@{data\_structures::Queue$<$ T $>$}}
+
+
+FIFO queue container.  
+
+
+
+
+{\ttfamily \#include $<$Queue.\+h$>$}
+>>>>>>> pr-11
 
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+<<<<<<< HEAD
 void \doxymbox{\hyperlink{classdata__structures_1_1_queue_a52d416594690df44a4bf74f4d6cc5300}{enqueue}} (const T \&item)
 \item 
 void \doxymbox{\hyperlink{classdata__structures_1_1_queue_a95599cc3fe4db49e4481efcba12421ce}{dequeue}} ()
@@ -19,6 +33,31 @@ size\+\_\+t \doxymbox{\hyperlink{classdata__structures_1_1_queue_a59963b2810a828
 \end{DoxyCompactItemize}
 
 
+=======
+void \mbox{\hyperlink{classdata__structures_1_1_queue_a52d416594690df44a4bf74f4d6cc5300}{enqueue}} (const T \&item)
+\begin{DoxyCompactList}\small\item\em Adds an element to the back of the queue. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdata__structures_1_1_queue_a95599cc3fe4db49e4481efcba12421ce}{dequeue}} ()
+\begin{DoxyCompactList}\small\item\em Removes the front element from the queue. \end{DoxyCompactList}\item 
+T \& \mbox{\hyperlink{classdata__structures_1_1_queue_ab2ac32e4b4ed386e193d74476075065f}{front}} ()
+\begin{DoxyCompactList}\small\item\em Returns the front element. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classdata__structures_1_1_queue_ade895b764f2f92f959d8b591a72a0d30}{empty}} () const
+\begin{DoxyCompactList}\small\item\em Checks whether the queue is empty. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classdata__structures_1_1_queue_a59963b2810a82817d790ece3426ff83c}{size}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of elements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class data\+\_\+structures\+::\+Queue$<$ T $>$}
+FIFO queue container. 
+
+
+\begin{DoxyItemize}
+\item Uses a doubly linked list internally
+\item Provides constant-\/time enqueue and dequeue 
+\end{DoxyItemize}
+
+>>>>>>> pr-11
 \label{doc-func-members}
 \Hypertarget{classdata__structures_1_1_queue_doc-func-members}
 \doxysubsection{Member Function Documentation}
@@ -27,34 +66,81 @@ size\+\_\+t \doxymbox{\hyperlink{classdata__structures_1_1_queue_a59963b2810a828
 \doxysubsubsection{\texorpdfstring{dequeue()}{dequeue()}}
 {\footnotesize\ttfamily \label{classdata__structures_1_1_queue_a95599cc3fe4db49e4481efcba12421ce} 
 template$<$typename T$>$ \\
+<<<<<<< HEAD
 void \doxymbox{\hyperlink{classdata__structures_1_1_queue}{data\+\_\+structures::\+\+Queue}}$<$ T $>$::\+dequeue (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+=======
+void \mbox{\hyperlink{classdata__structures_1_1_queue}{data\+\_\+structures\+::\+Queue}}$<$ T $>$\+::dequeue (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Removes the front element from the queue. 
+>>>>>>> pr-11
 
 \Hypertarget{classdata__structures_1_1_queue_ade895b764f2f92f959d8b591a72a0d30}\index{data\_structures::Queue$<$ T $>$@{data\_structures::Queue$<$ T $>$}!empty@{empty}}
 \index{empty@{empty}!data\_structures::Queue$<$ T $>$@{data\_structures::Queue$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{empty()}{empty()}}
 {\footnotesize\ttfamily \label{classdata__structures_1_1_queue_ade895b764f2f92f959d8b591a72a0d30} 
 template$<$typename T$>$ \\
+<<<<<<< HEAD
 bool \doxymbox{\hyperlink{classdata__structures_1_1_queue}{data\+\_\+structures::\+\+Queue}}$<$ T $>$::\+empty (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+=======
+bool \mbox{\hyperlink{classdata__structures_1_1_queue}{data\+\_\+structures\+::\+Queue}}$<$ T $>$\+::empty (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks whether the queue is empty. 
+
+\begin{DoxyReturn}{Returns}
+True if the queue is empty. 
+\end{DoxyReturn}
+>>>>>>> pr-11
 \Hypertarget{classdata__structures_1_1_queue_a52d416594690df44a4bf74f4d6cc5300}\index{data\_structures::Queue$<$ T $>$@{data\_structures::Queue$<$ T $>$}!enqueue@{enqueue}}
 \index{enqueue@{enqueue}!data\_structures::Queue$<$ T $>$@{data\_structures::Queue$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{enqueue()}{enqueue()}}
 {\footnotesize\ttfamily \label{classdata__structures_1_1_queue_a52d416594690df44a4bf74f4d6cc5300} 
 template$<$typename T$>$ \\
+<<<<<<< HEAD
 void \doxymbox{\hyperlink{classdata__structures_1_1_queue}{data\+\_\+structures::\+\+Queue}}$<$ T $>$::\+enqueue (\begin{DoxyParamCaption}\item[{const T \&}]{item}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+=======
+void \mbox{\hyperlink{classdata__structures_1_1_queue}{data\+\_\+structures\+::\+Queue}}$<$ T $>$\+::enqueue (\begin{DoxyParamCaption}\item[{const T \&}]{item}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds an element to the back of the queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & Element to enqueue. \\
+\hline
+\end{DoxyParams}
+>>>>>>> pr-11
 \Hypertarget{classdata__structures_1_1_queue_ab2ac32e4b4ed386e193d74476075065f}\index{data\_structures::Queue$<$ T $>$@{data\_structures::Queue$<$ T $>$}!front@{front}}
 \index{front@{front}!data\_structures::Queue$<$ T $>$@{data\_structures::Queue$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{front()}{front()}}
 {\footnotesize\ttfamily \label{classdata__structures_1_1_queue_ab2ac32e4b4ed386e193d74476075065f} 
 template$<$typename T$>$ \\
+<<<<<<< HEAD
 T \& \doxymbox{\hyperlink{classdata__structures_1_1_queue}{data\+\_\+structures::\+\+Queue}}$<$ T $>$::\+front (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+=======
+T \& \mbox{\hyperlink{classdata__structures_1_1_queue}{data\+\_\+structures\+::\+Queue}}$<$ T $>$\+::front (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the front element. 
+
+\begin{DoxyReturn}{Returns}
+Reference to the front element. 
+\end{DoxyReturn}
+>>>>>>> pr-11
 \Hypertarget{classdata__structures_1_1_queue_a59963b2810a82817d790ece3426ff83c}\index{data\_structures::Queue$<$ T $>$@{data\_structures::Queue$<$ T $>$}!size@{size}}
 \index{size@{size}!data\_structures::Queue$<$ T $>$@{data\_structures::Queue$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{size()}{size()}}
 {\footnotesize\ttfamily \label{classdata__structures_1_1_queue_a59963b2810a82817d790ece3426ff83c} 
 template$<$typename T$>$ \\
+<<<<<<< HEAD
 size\+\_\+t \doxymbox{\hyperlink{classdata__structures_1_1_queue}{data\+\_\+structures::\+\+Queue}}$<$ T $>$::\+size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -62,3 +148,19 @@ size\+\_\+t \doxymbox{\hyperlink{classdata__structures_1_1_queue}{data\+\_\+stru
 The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
 \item 
 include/\+data\+\_\+structures/\+\doxymbox{\hyperlink{_queue_8h}{Queue.\+h}}\end{DoxyCompactItemize}
+=======
+size\+\_\+t \mbox{\hyperlink{classdata__structures_1_1_queue}{data\+\_\+structures\+::\+Queue}}$<$ T $>$\+::size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the number of elements. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classdata__structures_1_1_queue}{Queue} size. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/data\+\_\+structures/\mbox{\hyperlink{_queue_8h}{Queue.\+h}}\end{DoxyCompactItemize}
+>>>>>>> pr-11

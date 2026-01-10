@@ -45,6 +45,7 @@
       }
   }
 \ExplSyntaxOff
+<<<<<<< HEAD
 
 \ExplSyntaxOn
 \dim_new:N \doxytablewidth
@@ -58,6 +59,8 @@
   }
 \ExplSyntaxOff
 
+=======
+>>>>>>> pr-11
 \RequirePackage{fancyvrb}
 \RequirePackage{tabularx}
 \RequirePackage{multicol}
@@ -182,7 +185,11 @@
     {\lccode`~32 \lowercase{\global\let~}\NiceSpace}\obeyspaces%
   }%
   {%
+<<<<<<< HEAD
     {\lccode`~32 \lowercase{\global\let~}\relax}\obeyspaces%
+=======
+    {\lccode`~32 \lowercase{\global\let~}}\obeyspaces%
+>>>>>>> pr-11
   }%
   \vspace{2pt}%
 }{%
@@ -192,6 +199,7 @@
   \settoheight{\CodeHeightChar}{?}%
 }
 
+<<<<<<< HEAD
 \newlength{\ttcharwidth}%
 
 \newenvironment{DoxyEmbeddedDoc}[1][4]{%
@@ -207,6 +215,8 @@
   \par\endgroup
 }
 
+=======
+>>>>>>> pr-11
 % Redefining not defined characters, i.e. "Replacement Character" in tex output.
 \def\ucr{\adjustbox{width=\CodeWidthChar,height=\CodeHeightChar}{\stackinset{c}{}{c}{-.2pt}{%
    \textcolor{white}{\sffamily\bfseries\small ?}}{%
@@ -434,7 +444,11 @@
 \def\hascaption{#2}%
 \def\haslabel{#3}%
 \ifx\hascaption\empty% if caption is empty
+<<<<<<< HEAD
   \SetTblrOuter[longtblr]{theme=DoxyTableBareTheme,entry=none}% table without caption or label
+=======
+  \SetTblrOuter[longtblr]{theme=DoxyTableBareTheme}% table without caption or label
+>>>>>>> pr-11
 \else% caption not empty
   \ifx\haslabel\empty% if label is empty
     \SetTblrOuter[longtblr]{theme=DoxyTableCaptionTheme,caption={#2}}% set table caption
@@ -442,15 +456,23 @@
     \SetTblrOuter[longtblr]{theme=DoxyTableCaptionTheme,caption={#2},label={#3}}% set table caption and label
   \fi%
 \fi%
+<<<<<<< HEAD
 \begingroup
 \doxycalculatetablewidth
 \sbox0{% first render the table in a savebox to calculate the width of the table which will be stored in \doxytablewidth
+=======
+\sbox0{% first render the table in a savebox to calculate the width of the table which will be stored in \wd0
+>>>>>>> pr-11
 \begin{tblr}{hlines,vlines,measure=vbox,colspec={*{#1}{l}}}%
 #5
 \end{tblr}%
 }% end of sbox0
+<<<<<<< HEAD
 \endgroup
 \ifdim\doxytablewidth>\linewidth% use flexible columns
+=======
+\ifdim\wd0>\linewidth% use flexible columns
+>>>>>>> pr-11
 % now render the table for real
 \begin{longtblr}{hlines,vlines,% automatically set horizontal and vertical cell lines
                  measure=vbox,% needed to allow nested lists and tables
@@ -474,6 +496,7 @@
 % parameters:
 % - #1: number of columns
 % - #2: 1=table has a heading row, 0=no heading row
+<<<<<<< HEAD
 \NewDocumentEnvironment{DoxyTableNested}{m m +b}{%
 \begingroup
 \doxycalculatetablewidth
@@ -501,6 +524,17 @@
 \end{tblr}%
 \fi%
 }{% no end marker needed anymore
+=======
+\NewDocumentEnvironment{DoxyTableNested}{m m}{%
+% now render the table for real
+\begin{tblr}{hlines,vlines,% automatically set horizontal and vertical cell lines
+             measure=vbox,% needed to allow nested lists and tables
+	     colspec={*{#1}{X[-1]}},% set column type for all columns
+             rowhead=#2% set which row is the header (0=disable, 1=enable)
+            }
+}{% no end marker needed anymore
+\end{tblr}
+>>>>>>> pr-11
 }%
 
 % Defines a parameter table
@@ -510,18 +544,27 @@
 % #3: Title of the table e.g. Params, Enumerator
 % #4: Body
 \NewDocumentCommand{\DoxyParamTable}{m m +m +m}{%
+<<<<<<< HEAD
   \SetTblrOuter[longtblr]{theme=DoxyTableBareTheme,entry=none}% set table caption and label
   \begingroup
   \doxycalculatetablewidth
   \sbox0{% render table off-screen first to capture its width in \doxytablewidth
+=======
+  \SetTblrOuter[longtblr]{theme=DoxyTableBareTheme}% set table caption and label
+  \sbox0{% render table off-screen first to capture its width in \wd0
+>>>>>>> pr-11
     \begin{tblr}{measure=vbox,colspec={*{#1}{|l}|}}%
     \SetCell[c=#1]{l} \tf{#3} \\[1ex]%
     \hline%
     #4
     \end{tblr}%
   }%
+<<<<<<< HEAD
   \endgroup
   \ifdim\doxytablewidth>\linewidth% use flexible columns
+=======
+  \ifdim\wd0>\linewidth%
+>>>>>>> pr-11
     \edef\DoxyTableColSpec{#2X[-1]}%
   \else%
     \edef\DoxyTableColSpec{#2l}%
@@ -530,8 +573,13 @@
           {vline{1-Z}={2-Z}{solid},%    show vertical lines for all rows except the first
            measure=vbox,%               needed to allow nested lists and tables
            colspec=\DoxyTableColSpec}}% set column type for all columns
+<<<<<<< HEAD
   \SetCell[c=#1]{l} \tf{#3} \\\nopagebreak%
   \hline\nopagebreak%
+=======
+  \SetCell[c=#1]{l} \tf{#3} \\[1ex]%
+  \hline%
+>>>>>>> pr-11
   #4
   \end{longtblr}%
   \par\addvspace{6pt}%
@@ -672,6 +720,7 @@
   \end{list}%
 }
 
+<<<<<<< HEAD
 \newsavebox{\doxymboxbox}
 \newlength{\doxymboxlength}
 \newcommand{\doxymbox}[1]{%
@@ -687,6 +736,11 @@
 % Used when hyperlinks are turned on
 \newcommand{\doxylink}[2]{%
   \doxymbox{\hyperlink{#1}{#2}}%
+=======
+% Used when hyperlinks are turned on
+\newcommand{\doxylink}[2]{%
+  \mbox{\hyperlink{#1}{#2}}%
+>>>>>>> pr-11
 }
 
 % Used for the cite command
@@ -724,7 +778,11 @@
 % Third argument is the SectionType, see the doxygen internal
 % documentation for the values (relevant: Page ... Subsubsection).
 \newcommand{\doxysectlink}[3]{%
+<<<<<<< HEAD
   \doxymbox{\hyperlink{#1}{#2}}%
+=======
+  \mbox{\hyperlink{#1}{#2}}%
+>>>>>>> pr-11
 }
 % Used when hyperlinks are turned off
 \newcommand{\doxyref}[3]{%

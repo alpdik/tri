@@ -1,5 +1,6 @@
 \doxysection{Repository.\+h}
 \hypertarget{_repository_8h_source}{}\label{_repository_8h_source}\index{include/core/Repository.h@{include/core/Repository.h}}
+<<<<<<< HEAD
 \doxymbox{\hyperlink{_repository_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ }
@@ -219,5 +220,241 @@
 \DoxyCodeLine{00221\ }
 \DoxyCodeLine{00222\ \ \ \ \ \};}
 \DoxyCodeLine{00223\ \}}
+=======
+\mbox{\hyperlink{_repository_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_graph_manager_8h}{GraphManager.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_reference_manager_8h}{ReferenceManager.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_staging_area_8h}{StagingArea.h}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_graph_algorithms_8h}{GraphAlgorithms.h}}"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_merkle_tree_8h}{MerkleTree.h}}"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_storage_engine_8h}{StorageEngine.h}}"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_merge_engine_8h}{MergeEngine.h}}"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_file_8h}{../entities/File.h}}"{}}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacecore}{core}}\ \{}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcore_1_1_repository_a98a9280e9cf1a0e481b7eabf0a614a99}{Repository}}\ \{}
+\DoxyCodeLine{00035\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{classcore_1_1_graph_manager}{GraphManager}}\ graph\_manager\_;}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{classcore_1_1_reference_manager}{ReferenceManager}}\ reference\_manager\_;}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{classcore_1_1_staging_area}{StagingArea}}\ staging\_area\_;}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{classcore_1_1_storage_engine}{StorageEngine}}\ storage\_engine\_;}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{classcore_1_1_merge_engine}{MergeEngine}}\ merge\_engine\_;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00046\ \ \ \ \ std::string\ calculate\_tree\_hash()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (staging\_area\_.is\_empty())\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}empty\_tree"{}};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcore_1_1_merkle_tree}{MerkleTree}}\ tree(staging\_area\_.get\_files());}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tree.\mbox{\hyperlink{classcore_1_1_merkle_tree_a1b63cdc5fa431631e1d98b5f7f8de6ac}{get\_root\_hash}}();}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{classcore_1_1_repository_a98a9280e9cf1a0e481b7eabf0a614a99}{Repository}}()\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!reference\_manager\_.get\_branch(\textcolor{stringliteral}{"{}master"{}}))\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ reference\_manager\_.create\_branch(\textcolor{stringliteral}{"{}master"{}},\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ reference\_manager\_.checkout\_branch(\textcolor{stringliteral}{"{}master"{}});}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Initialization\ warning:"{}}\ <<\ e.what()\ <<\ std::endl;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00063\ \ \ \ \ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcore_1_1_repository_a93746d04c3fb72eb405390c2603165ef}{add}}(\textcolor{keyword}{const}\ std::string\&\ path,\ \textcolor{keyword}{const}\ std::string\&\ content)\ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classentities_1_1_file}{entities::File}}\ file(path,\ content);}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ staging\_area\_.add\_file(file);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}File\ staged:\ "{}}\ <<\ path\ <<\ std::endl;}
+\DoxyCodeLine{00074\ \ \ \ \ \}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00083\ \ \ \ \ std::string\ \mbox{\hyperlink{classcore_1_1_repository_ac91e2083d479e78a62e8b1b5810f7475}{commit}}(\textcolor{keyword}{const}\ std::string\&\ message,\ \textcolor{keyword}{const}\ std::string\ author)\ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (staging\_area\_.is\_empty())\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Nothing\ to\ commit\ (Staging\ area\ is\ empty)."{}});}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ std::string\ tree\_hash\ =\ calculate\_tree\_hash();}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdata__structures_1_1_doubly_linked_list}{data\_structures::DoublyLinkedList<entities::File>}}\ commit\_files;}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ staged\ =\ staging\_area\_.get\_files();}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ staged.begin();\ it\ !=\ staged.end();\ ++it)\ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ graph\_manager\_.save\_blob(it-\/>get\_hash(),\ it-\/>get\_content());}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classentities_1_1_file}{entities::File}}\ lightweight\_file(it-\/>get\_path(),\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ lightweight\_file.\mbox{\hyperlink{classentities_1_1_file_a4b2ae1a5b763e88dc918bba0fec5493f}{set\_hash\_manual}}(it-\/>get\_hash());}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ commit\_files.\mbox{\hyperlink{classdata__structures_1_1_doubly_linked_list_ab4adcbbb5ff06d634ad96c614f988ea1}{push\_back}}(lightweight\_file);}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classentities_1_1_commit}{entities::Commit}}*\ parent\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classentities_1_1_branch}{entities::Branch}}*\ current\_branch\ =\ reference\_manager\_.get\_current\_branch();}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (current\_branch)\ parent\ =\ current\_branch-\/>\mbox{\hyperlink{classentities_1_1_branch_a610ac0c03d5dccb13f07776ea9864678}{get\_last\_commit}}();}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classentities_1_1_commit}{entities::Commit}}*\ new\_commit\ =}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classentities_1_1_commit}{entities::Commit}}(message,\ author,\ tree\_hash,\ commit\_files,\ parent);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ graph\_manager\_.add\_commit(new\_commit);}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ reference\_manager\_.update\_head(new\_commit);}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ staging\_area\_.clear();}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}["{}}\ <<\ current\_branch-\/>\mbox{\hyperlink{classentities_1_1_branch_ab0ca250fbbea166eb2b5afec79784f48}{get\_name}}()}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ new\_commit-\/>\mbox{\hyperlink{classentities_1_1_commit_a9010e46341002c13259e1110f3c088f4}{get\_id}}().substr(0,\ 7)}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}]\ "{}}\ <<\ message\ <<\ std::endl;}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ new\_commit-\/>\mbox{\hyperlink{classentities_1_1_commit_a9010e46341002c13259e1110f3c088f4}{get\_id}}();}
+\DoxyCodeLine{00115\ \ \ \ \ \}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcore_1_1_repository_acedc227b8b3d1b439a545be2aed2f463}{checkout}}(\textcolor{keyword}{const}\ std::string\&\ name)\ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ reference\_manager\_.checkout\_branch(name);}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classentities_1_1_branch}{entities::Branch}}*\ branch\ =\ reference\_manager\_.get\_branch(name);}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classentities_1_1_commit}{entities::Commit}}*\ \mbox{\hyperlink{classcore_1_1_repository_ac91e2083d479e78a62e8b1b5810f7475}{commit}}\ =\ branch-\/>\mbox{\hyperlink{classentities_1_1_branch_a610ac0c03d5dccb13f07776ea9864678}{get\_last\_commit}}();}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Switched\ to\ branch\ '"{}}\ <<\ name\ <<\ \textcolor{stringliteral}{"{}'"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classcore_1_1_repository_ac91e2083d479e78a62e8b1b5810f7475}{commit}})\ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ storage\_engine\_.restore\_files(\mbox{\hyperlink{classcore_1_1_repository_ac91e2083d479e78a62e8b1b5810f7475}{commit}},\ graph\_manager\_);}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Files\ restored\ from\ commit\ "{}}}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classcore_1_1_repository_ac91e2083d479e78a62e8b1b5810f7475}{commit}}-\/>get\_id().substr(0,7)\ <<\ std::endl;}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00134\ \ \ \ \ \}}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcore_1_1_repository_aff258c5ebfdd3c9198be2fe9265d753d}{merge}}(\textcolor{keyword}{const}\ std::string\&\ branch\_name)\ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classentities_1_1_branch}{entities::Branch}}*\ current\ =\ reference\_manager\_.get\_current\_branch();}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classentities_1_1_branch}{entities::Branch}}*\ target\ =\ reference\_manager\_.get\_branch(branch\_name);}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!target)}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Branch\ not\ found:\ "{}}\ +\ branch\_name);}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classentities_1_1_commit}{entities::Commit}}*\ head\_c\ =\ current-\/>\mbox{\hyperlink{classentities_1_1_branch_a610ac0c03d5dccb13f07776ea9864678}{get\_last\_commit}}();}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classentities_1_1_commit}{entities::Commit}}*\ target\_c\ =\ target-\/>\mbox{\hyperlink{classentities_1_1_branch_a610ac0c03d5dccb13f07776ea9864678}{get\_last\_commit}}();}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!head\_c\ ||\ !target\_c)\ \{}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Nothing\ to\ merge."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (head\_c-\/>\mbox{\hyperlink{classentities_1_1_commit_a9010e46341002c13259e1110f3c088f4}{get\_id}}()\ ==\ target\_c-\/>\mbox{\hyperlink{classentities_1_1_commit_a9010e46341002c13259e1110f3c088f4}{get\_id}}())\ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Already\ up\ to\ date."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Merging\ "{}}\ <<\ branch\_name}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ into\ "{}}\ <<\ current-\/>\mbox{\hyperlink{classentities_1_1_branch_ab0ca250fbbea166eb2b5afec79784f48}{get\_name}}()\ <<\ \textcolor{stringliteral}{"{}..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ std::string\ conflict\_msg\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ merged\_files\ =}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ merge\_engine\_.merge\_commits(head\_c,\ target\_c,}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ graph\_manager\_,\ conflict\_msg);}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ staging\_area\_.clear();}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ merged\_files.begin();\ it\ !=\ merged\_files.end();\ ++it)\ \{}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ staging\_area\_.add\_file(*it);}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ content\_to\_write\ =\ it-\/>get\_content();}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (content\_to\_write.empty())\ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ content\_to\_write\ =}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ graph\_manager\_.get\_blob\_content(it-\/>get\_hash());}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ storage\_engine\_.save\_file\_to\_disk(it-\/>get\_path(),\ content\_to\_write);}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!conflict\_msg.empty())\ \{}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}MERGE\ CONFLICT!\ Fix\ conflicts\ manually."{}}}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl\ <<\ conflict\_msg\ <<\ std::endl;}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ msg\ =\ \textcolor{stringliteral}{"{}Merge\ branch\ '"{}}\ +\ branch\_name\ +\ \textcolor{stringliteral}{"{}'"{}};}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ tree\_hash\ =\ calculate\_tree\_hash();}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdata__structures_1_1_doubly_linked_list}{data\_structures::DoublyLinkedList<entities::File>}}\ commit\_files;}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ staged\ =\ staging\_area\_.get\_files();}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ staged.begin();\ it\ !=\ staged.end();\ ++it)\ \{}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ graph\_manager\_.save\_blob(it-\/>get\_hash(),\ it-\/>get\_content());}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classentities_1_1_file}{entities::File}}\ lf(it-\/>get\_path(),\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lf.\mbox{\hyperlink{classentities_1_1_file_a4b2ae1a5b763e88dc918bba0fec5493f}{set\_hash\_manual}}(it-\/>get\_hash());}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ commit\_files.\mbox{\hyperlink{classdata__structures_1_1_doubly_linked_list_ab4adcbbb5ff06d634ad96c614f988ea1}{push\_back}}(lf);}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classentities_1_1_commit}{entities::Commit}}*\ merge\_commit\ =}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classentities_1_1_commit}{entities::Commit}}(msg,\ \textcolor{stringliteral}{"{}MergeUser"{}},}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tree\_hash,\ commit\_files,}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ head\_c,\ target\_c);}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ graph\_manager\_.add\_commit(merge\_commit);}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ reference\_manager\_.update\_head(merge\_commit);}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ staging\_area\_.clear();}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Merge\ successful."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00210\ \ \ \ \ \}}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00215\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcore_1_1_repository_a325f064481b220be100ee10605c5199a}{log}}()\ \{}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classentities_1_1_branch}{entities::Branch}}*\ current\ =\ reference\_manager\_.get\_current\_branch();}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!current\ ||\ !current-\/>\mbox{\hyperlink{classentities_1_1_branch_a610ac0c03d5dccb13f07776ea9864678}{get\_last\_commit}}())\ \{}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}No\ history\ yet"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ history\_stack\ =}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcore_1_1_graph_algorithms_a3329e90d30f2ba84b978e1b7b6f6bf7d}{GraphAlgorithms::get\_history\_dfs}}(current-\/>\mbox{\hyperlink{classentities_1_1_branch_a610ac0c03d5dccb13f07776ea9864678}{get\_last\_commit}}());}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n=====\ Commit\ History\ for\ '"{}}}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ current-\/>\mbox{\hyperlink{classentities_1_1_branch_ab0ca250fbbea166eb2b5afec79784f48}{get\_name}}()\ <<\ \textcolor{stringliteral}{"{}'\ =====\(\backslash\)n"{}};}
+\DoxyCodeLine{00228\ }
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!history\_stack.empty())\ \{}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classentities_1_1_commit}{entities::Commit}}*\ c\ =\ history\_stack.top();}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ history\_stack.pop();}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Commit:\ "{}}\ <<\ c-\/>\mbox{\hyperlink{classentities_1_1_commit_a9010e46341002c13259e1110f3c088f4}{get\_id}}()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Author:\ "{}}\ <<\ c-\/>\mbox{\hyperlink{classentities_1_1_commit_ae9df9b356b2a981a978cf2132c752e34}{get\_author}}()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ std::time\_t\ t\ =\ c-\/>\mbox{\hyperlink{classentities_1_1_commit_ae2f5922d8a7dabaae5ac68a34b196e0c}{get\_time}}();}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Date:\ \ \ "{}}\ <<\ std::ctime(\&t);}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Tree:\ \ \ "{}}}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ c-\/>\mbox{\hyperlink{classentities_1_1_commit_a84ae19004a09b3dfdb31f98569769833}{get\_tree\_hash}}().substr(0,\ 10)}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}...\(\backslash\)n"{}};}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (c-\/>\mbox{\hyperlink{classentities_1_1_commit_ad6a2e0ab3d4b3070ba0bd7069798a2f8}{is\_merge\_commit}}())\ \{}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Merge:\ \ "{}}}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ c-\/>\mbox{\hyperlink{classentities_1_1_commit_adf8d8d39c62925f1b6c53bf8a64e3408}{get\_parent1}}()-\/>\mbox{\hyperlink{classentities_1_1_commit_a9010e46341002c13259e1110f3c088f4}{get\_id}}().substr(0,7)}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ "{}}}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ c-\/>\mbox{\hyperlink{classentities_1_1_commit_a3ca3732810681720fd6dff05b54d1764}{get\_parent2}}()-\/>\mbox{\hyperlink{classentities_1_1_commit_a9010e46341002c13259e1110f3c088f4}{get\_id}}().substr(0,7)}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n\ \ \ \ "{}}\ <<\ c-\/>\mbox{\hyperlink{classentities_1_1_commit_aadec2c35e1f4d9727746f8546b3a5f1c}{get\_message}}()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"{}};}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00252\ \ \ \ \ \}}
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00259\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcore_1_1_repository_ac0a0bb38c4b0e136a89f6c997685df5e}{create\_branch}}(\textcolor{keyword}{const}\ std::string\&\ name)\ \{}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classentities_1_1_branch}{entities::Branch}}*\ current\ =\ reference\_manager\_.get\_current\_branch();}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!current\ ||\ !current-\/>\mbox{\hyperlink{classentities_1_1_branch_a610ac0c03d5dccb13f07776ea9864678}{get\_last\_commit}}())\ \{}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Cannot\ create\ branch:\ No\ commits\ exist\ yet\ (HEAD\ is\ empty)."{}}}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ reference\_manager\_.create\_branch(name,}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ current-\/>\mbox{\hyperlink{classentities_1_1_branch_a610ac0c03d5dccb13f07776ea9864678}{get\_last\_commit}}());}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Branch\ created:\ "{}}\ <<\ name\ <<\ std::endl;}
+\DoxyCodeLine{00271\ \ \ \ \ \}}
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00277\ \ \ \ \ std::string\ \mbox{\hyperlink{classcore_1_1_repository_acce99b94f41e4ca9d8e1369f9ed2152c}{get\_current\_branch\_name}}()\ \{}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ b\ =\ reference\_manager\_.get\_current\_branch();}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ b\ ?\ b-\/>get\_name()\ :\ \textcolor{stringliteral}{"{}Detached"{}};}
+\DoxyCodeLine{00280\ \ \ \ \ \}}
+\DoxyCodeLine{00281\ \};}
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00283\ \}\ \textcolor{comment}{//\ namespace\ core}}
+>>>>>>> pr-11
 
 \end{DoxyCode}

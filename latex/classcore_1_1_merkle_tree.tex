@@ -1,12 +1,26 @@
+<<<<<<< HEAD
 \doxysection{core::\+Merkle\+Tree Class Reference}
 \hypertarget{classcore_1_1_merkle_tree}{}\label{classcore_1_1_merkle_tree}\index{core::MerkleTree@{core::MerkleTree}}
 
 
 {\ttfamily \+\#include $<$Merkle\+Tree.\+h$>$}
+=======
+\doxysection{core\+::Merkle\+Tree Class Reference}
+\hypertarget{classcore_1_1_merkle_tree}{}\label{classcore_1_1_merkle_tree}\index{core::MerkleTree@{core::MerkleTree}}
+
+
+Builds a Merkle tree from staged files.  
+
+
+
+
+{\ttfamily \#include $<$Merkle\+Tree.\+h$>$}
+>>>>>>> pr-11
 
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+<<<<<<< HEAD
 \doxymbox{\hyperlink{classcore_1_1_merkle_tree_a0a74c65aa254de189a75a609ac99fad9}{Merkle\+Tree}} (const \doxymbox{\hyperlink{classdata__structures_1_1_doubly_linked_list}{data\+\_\+structures::\+\+Doubly\+Linked\+List}}$<$ \doxymbox{\hyperlink{classentities_1_1_file}{entities::\+\+File}} $>$ \&staged\+\_\+files)
 \item 
 \doxymbox{\hyperlink{classcore_1_1_merkle_tree_a5d7d186fffc178cbf369fb6c0a7adc7c}{\texorpdfstring{$\sim$}{\string~}\+Merkle\+Tree}} ()
@@ -20,6 +34,30 @@ std::\+string \doxymbox{\hyperlink{classcore_1_1_merkle_tree_a1b63cdc5fa431631e1
 \end{DoxyCompactItemize}
 
 
+=======
+\mbox{\hyperlink{classcore_1_1_merkle_tree_a0a74c65aa254de189a75a609ac99fad9}{Merkle\+Tree}} (const \mbox{\hyperlink{classdata__structures_1_1_doubly_linked_list}{data\+\_\+structures\+::\+Doubly\+Linked\+List}}$<$ \mbox{\hyperlink{classentities_1_1_file}{entities\+::\+File}} $>$ \&staged\+\_\+files)
+\begin{DoxyCompactList}\small\item\em Constructs a tree from staged files. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcore_1_1_merkle_tree_a5d7d186fffc178cbf369fb6c0a7adc7c}{\texorpdfstring{$\sim$}{\string~}\+Merkle\+Tree}} ()
+\begin{DoxyCompactList}\small\item\em Releases the entire tree structure. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classcore_1_1_merkle_tree_a1b63cdc5fa431631e1d98b5f7f8de6ac}{get\+\_\+root\+\_\+hash}} () const
+\begin{DoxyCompactList}\small\item\em Returns the root hash. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structcore_1_1_merkle_node}{Merkle\+Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classcore_1_1_merkle_tree_a693029668ed3805f13129372e8ee86d7}{root}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Builds a Merkle tree from staged files. 
+
+
+\begin{DoxyItemize}
+\item Owns the root node
+\item Produces deterministic hashes 
+\end{DoxyItemize}
+
+>>>>>>> pr-11
 \label{doc-constructors}
 \Hypertarget{classcore_1_1_merkle_tree_doc-constructors}
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -27,13 +65,35 @@ std::\+string \doxymbox{\hyperlink{classcore_1_1_merkle_tree_a1b63cdc5fa431631e1
 \index{MerkleTree@{MerkleTree}!core::MerkleTree@{core::MerkleTree}}
 \doxysubsubsection{\texorpdfstring{MerkleTree()}{MerkleTree()}}
 {\footnotesize\ttfamily \label{classcore_1_1_merkle_tree_a0a74c65aa254de189a75a609ac99fad9} 
+<<<<<<< HEAD
 core::\+\+Merkle\+Tree::\+\+Merkle\+Tree (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{classdata__structures_1_1_doubly_linked_list}{data\+\_\+structures::\+\+Doubly\+Linked\+List}}$<$ \doxymbox{\hyperlink{classentities_1_1_file}{entities::\+\+File}} $>$ \&}]{staged\+\_\+files}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
 
+=======
+core\+::\+Merkle\+Tree\+::\+Merkle\+Tree (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classdata__structures_1_1_doubly_linked_list}{data\+\_\+structures\+::\+Doubly\+Linked\+List}}$<$ \mbox{\hyperlink{classentities_1_1_file}{entities\+::\+File}} $>$ \&}]{staged\+\_\+files}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Constructs a tree from staged files. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em staged\+\_\+files} & Files to include in the tree. \\
+\hline
+\end{DoxyParams}
+>>>>>>> pr-11
 \Hypertarget{classcore_1_1_merkle_tree_a5d7d186fffc178cbf369fb6c0a7adc7c}\index{core::MerkleTree@{core::MerkleTree}!````~MerkleTree@{\texorpdfstring{$\sim$}{\string~}MerkleTree}}
 \index{````~MerkleTree@{\texorpdfstring{$\sim$}{\string~}MerkleTree}!core::MerkleTree@{core::MerkleTree}}
 \doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}MerkleTree()}{\string~MerkleTree()}}
 {\footnotesize\ttfamily \label{classcore_1_1_merkle_tree_a5d7d186fffc178cbf369fb6c0a7adc7c} 
+<<<<<<< HEAD
 core::\+\+Merkle\+Tree::\+\texorpdfstring{$\sim$}{\string~}\+Merkle\+Tree (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+=======
+core\+::\+Merkle\+Tree\+::\texorpdfstring{$\sim$}{\string~}\+Merkle\+Tree (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Releases the entire tree structure. 
+>>>>>>> pr-11
 
 
 
@@ -44,10 +104,24 @@ core::\+\+Merkle\+Tree::\+\texorpdfstring{$\sim$}{\string~}\+Merkle\+Tree (\begi
 \index{get\_root\_hash@{get\_root\_hash}!core::MerkleTree@{core::MerkleTree}}
 \doxysubsubsection{\texorpdfstring{get\_root\_hash()}{get\_root\_hash()}}
 {\footnotesize\ttfamily \label{classcore_1_1_merkle_tree_a1b63cdc5fa431631e1d98b5f7f8de6ac} 
+<<<<<<< HEAD
 std::\+string core::\+\+Merkle\+Tree::\+get\+\_\+root\+\_\+hash (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
+=======
+std\+::string core\+::\+Merkle\+Tree\+::get\+\_\+root\+\_\+hash (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the root hash. 
+
+\begin{DoxyReturn}{Returns}
+Root hash or empty string. 
+\end{DoxyReturn}
+
+
+>>>>>>> pr-11
 \label{doc-variable-members}
 \Hypertarget{classcore_1_1_merkle_tree_doc-variable-members}
 \doxysubsection{Member Data Documentation}
@@ -55,6 +129,7 @@ std::\+string core::\+\+Merkle\+Tree::\+get\+\_\+root\+\_\+hash (\begin{DoxyPara
 \index{root@{root}!core::MerkleTree@{core::MerkleTree}}
 \doxysubsubsection{\texorpdfstring{root}{root}}
 {\footnotesize\ttfamily \label{classcore_1_1_merkle_tree_a693029668ed3805f13129372e8ee86d7} 
+<<<<<<< HEAD
 \doxymbox{\hyperlink{structcore_1_1_merkle_node}{Merkle\+Node}}\texorpdfstring{$\ast$}{*} core::\+\+Merkle\+Tree::\+root}
 
 
@@ -62,3 +137,12 @@ std::\+string core::\+\+Merkle\+Tree::\+get\+\_\+root\+\_\+hash (\begin{DoxyPara
 The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
 \item 
 include/\+core/\+\doxymbox{\hyperlink{_merkle_tree_8h}{Merkle\+Tree.\+h}}\end{DoxyCompactItemize}
+=======
+\mbox{\hyperlink{structcore_1_1_merkle_node}{Merkle\+Node}}\texorpdfstring{$\ast$}{*} core\+::\+Merkle\+Tree\+::root}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/core/\mbox{\hyperlink{_merkle_tree_8h}{Merkle\+Tree.\+h}}\end{DoxyCompactItemize}
+>>>>>>> pr-11
