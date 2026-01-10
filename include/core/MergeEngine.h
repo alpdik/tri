@@ -1,15 +1,23 @@
-/**
+ /**
  * @file MergeEngine.h
+ * @brief Handles merging logic between two commits using a 3-way merge strategy.
+ *
+ * @details This file contains the definition of the MergeEngine class and
+ * supporting logic required to perform commit merge operations
+ * within the repository system.
+ *
  * @author Umut Ertuğrul Daşgın
- * @brief Handles merging logic between two commits using 3-Way Merge.
+ * @note Documentation maintained by Deniz Kayra Aydın.
  * @version 1.1
  * @date 2025-12-25
+ * @lastModified 2026-01-10
  */
+
 
 #pragma once
 
 #include <string>
-#include <iostream>
+#include <iostream> 
 #include "GraphAlgorithms.h"
 #include "GraphManager.h"
 #include "../entities/Commit.h"
@@ -18,10 +26,39 @@
 #include "../data_structures/HashTable.h"
 
 namespace core {
+    /**
+    * @brief Provides functionality for merging commits using a 3-way merge algorithm.
+    *
+    * @details The MergeEngine class compares the common base commit with the
+    * "ours" and "theirs" commits to determine the final merged state
+    * and to identify merge conflicts when they occur.
+    */
 
-    class MergeEngine {
+
+    class MergeEngine { 
     public:
+        /**
+        * @brief Constructs a MergeEngine instance.
+        */
+
         MergeEngine() = default;
+
+        /**
+        * @brief Merges two commits using a 3-way merge strategy.
+        *
+        * @details This class provides an abstract representation of Git-like branch and HEAD management.
+        *
+        * @param[in] ours Pointer to the current branch commit.
+        * @param[in] theirs Pointer to the commit being merged into the current branch.
+        * @param[in] graph_mgr Reference to the GraphManager used for retrieving blob contents.
+        * @param[out] out_conflict_msg Accumulates human-readable conflict descriptions.
+        *
+        * @return A list of merged files representing the merge result.
+        *
+        * @pre ours != nullptr
+        * @pre theirs != nullptr
+        * @post Returned file list represents the merged state of the two commits.
+        */
 
         data_structures::DoublyLinkedList<entities::File> merge_commits(
             entities::Commit* ours, 
@@ -121,6 +158,18 @@ namespace core {
         }
 
     private:
+        
+        /**
+        * @brief Creates a mapping from file paths to their content hashes for a commit.
+        *
+        * @details This helper function extracts all files from the given commit and stores
+        * their paths and corresponding content hashes in a hash table to enable
+        * fast lookup during the merge process.
+        *
+        * @param[in] c Pointer to the commit whose files will be mapped.
+        * @return A hash table mapping file paths to content hashes.
+        */
+
         data_structures::HashTable<std::string, std::string> create_file_map(entities::Commit* c) {
             data_structures::HashTable<std::string, std::string> map;
             if (!c) return map;
